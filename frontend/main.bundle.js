@@ -107,6 +107,13 @@ var MundilabelSettingsService = (function () {
             location: '../../assets/images/wallpaper-location.jpg',
             contact: '../../assets/images/wallpaper-contact.jpg'
         };
+        this.MUNDILABEL_CLIENTS_LOGOS = {
+            ups: '../../assets/images/ups_logo.png',
+            loreal: '../../assets/images/loreal_logo.png',
+            ifema: '../../assets/images/ifema-logo.png',
+            seur: '../../assets/images/seur_logo.png',
+            wurth: '../../assets/images/Wurth_Logo.png'
+        };
     }
     return MundilabelSettingsService;
 }()); // MundilabelSettingsService
@@ -121,7 +128,7 @@ MundilabelSettingsService = __decorate([
 /***/ "../../../../../src/app/components/about-us/about-us.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  about-as works!\n</p>\n"
+module.exports = "\n<div class=\"container\">\n  <div class=\"row\">\n    <div class=\"col-12\">\n      \n      <h1 class=\"section-title\">{{ 'NAVIGATION_ROUTE.ABOUT_US' | translate }}</h1>\n      <h2 class=\"section-subtitle\">{{ 'ABOUT_US.SECTION_SUBTITLE' | translate }}</h2>\n      \n      <p class=\"section-text\">\n        {{ 'ABOUT_US.HISTORY' | translate }}\n        {{ 'ABOUT_US.COMPANY_POLITICS' | translate }}\n        {{ 'ABOUT_US.WAY_OF_WORKING' | translate }}\n        <br/>\n        <br/>\n        {{ 'ABOUT_US.MUNDILABEL_TEAM' | translate }}\n      </p>\n\n\n      <h1 class=\"title-text\">{{ 'ABOUT_US.TITLE_1' | translate }}</h1>\n      <div class=\"title-line\"></div>\n\n\n      <p class=\"section-text\">\n        {{ 'ABOUT_US.WORK_METHODS' | translate }}\n        <span [innerHTML]=\" 'ABOUT_US.TARGETS' | translate \"></span>\n      </p>\n\n      <br/>\n      <br/>\n\n      <p class=\"section-text\">\n          {{ 'ABOUT_US.AT_PRODUCTION' | translate }}\n          <span [innerHTML]=\" 'ABOUT_US.KINDS_OF_PRODUCTION' | translate \"></span>\n      </p>\n\n\n\n        <h1 class=\"title-text\">{{ 'ABOUT_US.OUR_PRODUCTS' | translate }}</h1>\n        <div class=\"title-line\"></div>\n    \n    </div>\n  </div>\n</div>\n\n\n\n\n"
 
 /***/ }),
 
@@ -133,7 +140,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, ".font-title, .section-title {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 2.8rem;\n  font-weight: 900; }\n\n.font-subtitle, .section-subtitle {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 2rem;\n  font-weight: 200; }\n\n.font-widget {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 1rem;\n  font-weight: 400; }\n\n.font-paragraph, .section-text {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 0.95rem;\n  font-weight: 300; }\n\n.font-detail {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 0.75rem;\n  font-weight: 300; }\n\n.title-line {\n  width: 8%;\n  border-top: 14px solid rgba(13, 135, 216, 0.35); }\n\n.light-shadow {\n  box-shadow: 0px 0px 5px 0px rgba(41, 47, 56, 0.75); }\n\n.section-title {\n  font-size: 3.8rem;\n  background-color: rgba(13, 135, 216, 0.35);\n  padding: 0.5rem; }\n\n.section-subtitle {\n  margin-bottom: 1rem;\n  color: rgba(41, 47, 56, 0.85);\n  opacity: 0.5; }\n\n.section-text {\n  color: rgba(41, 47, 56, 0.85); }\n\n.container {\n  margin-top: 3rem;\n  margin-bottom: 3rem; }\n\n.title-text {\n  font-size: 2rem;\n  font-weight: 200;\n  color: rgba(41, 47, 56, 0.85);\n  margin-top: 3rem; }\n\n.title-line {\n  margin-bottom: 3rem; }\n", ""]);
 
 // exports
 
@@ -257,7 +264,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".font-title {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 3.5rem;\n  font-weight: 900; }\n\n.font-widget {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 1rem;\n  font-weight: 400; }\n\n.font-paragraph {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 0.88rem;\n  font-weight: 300; }\n\n.font-detail, .footer-copyright p {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 0.75rem;\n  font-weight: 300; }\n\n.light-shadow {\n  box-shadow: 0px 0px 5px 0px rgba(41, 47, 56, 0.75); }\n\n.footer-first-wrapper {\n  width: 100%;\n  height: auto;\n  padding: 20px 0;\n  background-color: #E3E8F0; }\n  .footer-first-wrapper .logotype-wrapper {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    padding: 20px 0px; }\n\n.info-wrapper {\n  margin: 15px 0; }\n\n.delimiter-line {\n  border-top: 1px solid;\n  border-color: rgba(41, 47, 56, 0.1); }\n\n.navigator-wrapper {\n  padding: 10px 0; }\n\n:host /deep/ navigator {\n  opacity: 0.5; }\n\n.social-media-wrapper {\n  width: 100%;\n  padding: 15px 0;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: end;\n      -ms-flex-pack: end;\n          justify-content: flex-end;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center; }\n  .social-media-wrapper a:hover {\n    cursor: pointer; }\n  .social-media-wrapper i {\n    color: rgba(41, 47, 56, 0.5);\n    font-size: 1.65rem;\n    padding: 0 0.7rem; }\n    .social-media-wrapper i:hover {\n      background-color: rgba(255, 255, 255, 0.2); }\n\n.address-info {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  -webkit-box-align: start;\n      -ms-flex-align: start;\n          align-items: flex-start; }\n  .address-info span {\n    padding: 0.1rem 0;\n    font-size: 0.88rem;\n    color: rgba(41, 47, 56, 0.5); }\n\n.footer-copyright {\n  padding: 20px 0px; }\n  .footer-copyright p {\n    color: rgba(41, 47, 56, 0.5);\n    text-align: center;\n    margin-bottom: 0 !important; }\n\n@media (max-width: 992px) {\n  .navigator.delimiter-line {\n    display: none; }\n  .navigator-wrapper {\n    display: none; } }\n\n@media (max-width: 992px) {\n  .logotype-wrapper {\n    -webkit-box-pack: center;\n        -ms-flex-pack: center;\n            justify-content: center; }\n  .info-wrapper {\n    margin: 5px 0; }\n  .social-media-wrapper {\n    -ms-flex-pack: distribute;\n        justify-content: space-around; } }\n", ""]);
+exports.push([module.i, ".font-title {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 2.8rem;\n  font-weight: 900; }\n\n.font-subtitle {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 2rem;\n  font-weight: 200; }\n\n.font-widget {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 1rem;\n  font-weight: 400; }\n\n.font-paragraph {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 0.95rem;\n  font-weight: 300; }\n\n.font-detail, .footer-copyright p {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 0.75rem;\n  font-weight: 300; }\n\n.title-line {\n  width: 8%;\n  border-top: 14px solid rgba(13, 135, 216, 0.35); }\n\n.light-shadow {\n  box-shadow: 0px 0px 5px 0px rgba(41, 47, 56, 0.75); }\n\n.footer-first-wrapper {\n  width: 100%;\n  height: auto;\n  padding: 20px 0;\n  background-color: #E3E8F0; }\n  .footer-first-wrapper .logotype-wrapper {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    padding: 20px 0px; }\n\n.info-wrapper {\n  margin: 15px 0; }\n\n.delimiter-line {\n  border-top: 1px solid;\n  border-color: rgba(41, 47, 56, 0.1); }\n\n.navigator-wrapper {\n  padding: 10px 0; }\n\n:host /deep/ navigator {\n  opacity: 0.5; }\n\n.social-media-wrapper {\n  width: 100%;\n  padding: 15px 0;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: end;\n      -ms-flex-pack: end;\n          justify-content: flex-end;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center; }\n  .social-media-wrapper a:hover {\n    cursor: pointer; }\n  .social-media-wrapper i {\n    color: rgba(41, 47, 56, 0.5);\n    font-size: 1.65rem;\n    padding: 0 0.7rem; }\n    .social-media-wrapper i:hover {\n      background-color: rgba(255, 255, 255, 0.2); }\n\n.address-info {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  -webkit-box-align: start;\n      -ms-flex-align: start;\n          align-items: flex-start; }\n  .address-info span {\n    padding: 0.1rem 0;\n    font-size: 0.95rem;\n    color: rgba(41, 47, 56, 0.5); }\n\n.footer-copyright {\n  padding: 20px 0px; }\n  .footer-copyright p {\n    color: rgba(41, 47, 56, 0.5);\n    text-align: center;\n    margin-bottom: 0 !important; }\n\n@media (max-width: 992px) {\n  .navigator.delimiter-line {\n    display: none; }\n  .navigator-wrapper {\n    display: none; } }\n\n@media (max-width: 992px) {\n  .logotype-wrapper {\n    -webkit-box-pack: center;\n        -ms-flex-pack: center;\n            justify-content: center; }\n  .info-wrapper {\n    margin: 5px 0; }\n  .social-media-wrapper {\n    -ms-flex-pack: distribute;\n        justify-content: space-around; } }\n", ""]);
 
 // exports
 
@@ -319,7 +326,7 @@ var _a;
 /***/ "../../../../../src/app/components/header/components/navigator/navigator.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"navigator-wrapper\">\n  <span [class.activated]=\" isActivated(2) \" class=\"item\" (click)=\" navigationTo(2) \">About As</span>\n  <span [class.activated]=\" isActivated(3) \" class=\"item\" (click)=\" navigationTo(3)\">How We Work</span>\n  <span [class.activated]=\" isActivated(4) \" class=\"item\" (click)=\" navigationTo(4)\">Location</span>\n  <span [class.activated]=\" isActivated(5) \" class=\"item\" (click)=\" navigationTo(5)\">Contact</span>\n</div>\n\n\n\n<div class=\"mini-navigator-wrapper\">\n  \n  <div>\n    <i class=\"material-icons\">menu</i>\n  </div>\n\n  \n</div>"
+module.exports = "<div class=\"navigator-wrapper\">\n  <span [class.activated]=\" isActivated(1) \" class=\"item\" (click)=\" navigationTo(1) \">{{ 'NAVIGATION_ROUTE.HOME' | translate }}</span>\n  <span [class.activated]=\" isActivated(2) \" class=\"item\" (click)=\" navigationTo(2)\">{{ 'NAVIGATION_ROUTE.ABOUT_US' | translate }}</span>\n  <span [class.activated]=\" isActivated(3) \" class=\"item\" (click)=\" navigationTo(3)\">{{ 'NAVIGATION_ROUTE.LOCATION' | translate }}</span>\n  <span [class.activated]=\" isActivated(4) \" class=\"item\" (click)=\" navigationTo(4)\">{{ 'NAVIGATION_ROUTE.CONTACT' | translate }}</span>\n</div>\n"
 
 /***/ }),
 
@@ -331,7 +338,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".font-title {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 3.5rem;\n  font-weight: 900; }\n\n.font-widget, .navigator-wrapper .item {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 1rem;\n  font-weight: 400; }\n\n.font-paragraph {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 0.88rem;\n  font-weight: 300; }\n\n.font-detail {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 0.75rem;\n  font-weight: 300; }\n\n.light-shadow {\n  box-shadow: 0px 0px 5px 0px rgba(41, 47, 56, 0.75); }\n\n:host {\n  width: 100%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  background-color: none;\n  -ms-flex-pack: distribute;\n      justify-content: space-around;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center; }\n\n.navigator-wrapper {\n  height: 100%;\n  width: 100%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-pack: distribute;\n      justify-content: space-around; }\n  .navigator-wrapper .item {\n    color: #292F38;\n    border-radius: 3px;\n    padding: 0.2rem 2rem; }\n    .navigator-wrapper .item.activated {\n      color: #F30707; }\n      .navigator-wrapper .item.activated:hover {\n        cursor: default;\n        background-color: none !important; }\n    .navigator-wrapper .item:not(.activated):hover {\n      cursor: pointer;\n      background-color: rgba(255, 255, 255, 0.1); }\n\n.mini-navigator-wrapper {\n  display: none;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  color: #292F38; }\n  .mini-navigator-wrapper i {\n    font-size: 1.65rem; }\n\n@media (max-width: 992px) {\n  .navigator-wrapper {\n    display: none !important; }\n  .mini-navigator-wrapper {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex; } }\n", ""]);
+exports.push([module.i, ".font-title {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 2.8rem;\n  font-weight: 900; }\n\n.font-subtitle {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 2rem;\n  font-weight: 200; }\n\n.font-widget, .navigator-wrapper .item {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 1rem;\n  font-weight: 400; }\n\n.font-paragraph {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 0.95rem;\n  font-weight: 300; }\n\n.font-detail {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 0.75rem;\n  font-weight: 300; }\n\n.title-line {\n  width: 8%;\n  border-top: 14px solid rgba(13, 135, 216, 0.35); }\n\n.light-shadow {\n  box-shadow: 0px 0px 5px 0px rgba(41, 47, 56, 0.75); }\n\n:host {\n  width: 100%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  background-color: none;\n  -ms-flex-pack: distribute;\n      justify-content: space-around;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center; }\n\n.navigator-wrapper {\n  height: 100%;\n  width: 100%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-pack: distribute;\n      justify-content: space-around; }\n  .navigator-wrapper .item {\n    color: #292F38;\n    border-radius: 3px;\n    padding: 0.2rem 2rem; }\n    .navigator-wrapper .item.activated {\n      color: #F30707; }\n      .navigator-wrapper .item.activated:hover {\n        cursor: default;\n        background-color: none !important; }\n    .navigator-wrapper .item:not(.activated):hover {\n      cursor: pointer;\n      background-color: rgba(255, 255, 255, 0.1); }\n\n.mini-navigator-wrapper {\n  display: none;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  color: #292F38; }\n  .mini-navigator-wrapper i {\n    font-size: 1.65rem; }\n\n@media (max-width: 992px) {\n  .navigator-wrapper {\n    display: none !important; }\n  .mini-navigator-wrapper {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex; } }\n", ""]);
 
 // exports
 
@@ -486,7 +493,7 @@ var _a;
 /***/ "../../../../../src/app/components/home/home.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n\n\n<div class=\"company-features-wrapper\">\n  <div class=\"container\">\n        \n    <div class=\"row\">\n      \n      <div class=\"col-12 col-md-4\">\n        <div class=\"feature\">\n          <i class=\"material-icons\">local_play</i>\n          <span>{{ 'HOME.QUALITY_LABEL' | translate }}</span>\n          <p>{{ 'HOME.QUALITY_SLOGAN' | translate }}</p>\n        </div>\n      </div>\n\n      <div class=\"col-12 col-md-4\">\n        <div class=\"feature\">\n          <i class=\"material-icons\">new_releases</i>\n          <span>{{ 'HOME.SERIOUSNESS_LABEL' | translate }}</span>\n          <p>{{ 'HOME.SERIOUSNESS_SLOGAN' | translate }}</p>\n        </div>\n      </div>\n\n\n      <div class=\"col-12 col-md-4\">\n          <div class=\"feature\">\n            <i class=\"material-icons\">event_available</i>\n            <span>{{ 'HOME.SERVICE_LABEL' | translate }}</span>\n            <p>{{ 'HOME.SERVICE_SLOGAN' | translate }}</p>\n          </div>\n        </div>\n\n\n    </div>\n  </div>\n</div>\n\n\n\n\n<div class=\"box-contact-info\">\n  <div class=\"container\">\n    <div class=\"row\">\n      <div class=\"col-12\">\n        \n        <h1>Si necesitas nuestra ayuda, no dudes en comunicarte con nosotros en el <span>{{ phone }}</span></h1>\n\n      </div>\n    </div>\n  </div>\n</div>\n\n\n\n\n\n<div class=\"company-slogan-wrapper\">\n    <div class=\"container\">\n          \n      <div class=\"row\">\n        <div class=\"col-12\">\n                \n        <p class=\"slogan\">\n          <i class=\"material-icons flip-icon\">format_quote</i>\n          <span>{{ 'APPLICATION_COMMON.SLOGAN' | translate }}</span>\n          <i class=\"material-icons\">format_quote</i>\n        </p>\n          \n      </div>\n    </div>\n  </div>\n</div>\n\n\n\n\n\n<div class=\"container\">\n\n  <div class=\"row\">\n    <div class=\"col\">\n      <div class=\"box-features\">\n        \n        <div class=\"box\">\n\n        </div>\n\n\n      </div>\n    </div>\n    \n  </div>\n\n\n  <div class=\"row\">\n    <div class=\"col-12\">\n      <div class=\"box-info\">\n        <p>\n          \n        </p>\n      </div>\n    </div>\n  </div>\n</div>\n\n\n\n<div class=\"background-image\" [style.background-image]=\" 'url(' + labelImageUrl + ')' \"></div>\n\n\n\n\n\n<div class=\"box-how-we-work\">\n  <div class=\"container\">\n    <div class=\"row\">\n      <div class=\"col-12\">\n        \n        <h1>\n          <i class=\"material-icons flip-icon\">format_quote</i>\n          {{ 'TITLES_BY_ROUTE.HOWWEWORK' | translate }}\n          <i class=\"material-icons\">format_quote</i>\n        </h1>\n        \n      </div>\n    </div>\n  </div>\n</div>\n\n\n\n\n\n<div class=\"box-contact-info last-box\">\n  <div class=\"container\">\n    <div class=\"row\">\n      <div class=\"col-12\">\n          <h1>También puedes comunicarte con nosotros por correo electronico, <span>{{ mail }}</span></h1>\n      </div>\n    </div>\n  </div>\n</div>\n\n"
+module.exports = "\n\n\n<div class=\"company-features-wrapper\">\n  <div class=\"container\">\n        \n    <div class=\"row\">\n      \n      <div class=\"col-12 col-md-4\">\n        <div class=\"feature\">\n          <i class=\"material-icons\">local_play</i>\n          <span>{{ 'HOME.QUALITY_LABEL' | translate }}</span>\n          <p>{{ 'HOME.QUALITY_SLOGAN' | translate }}</p>\n        </div>\n      </div>\n\n      <div class=\"col-12 col-md-4\">\n        <div class=\"feature\">\n          <i class=\"material-icons\">new_releases</i>\n          <span>{{ 'HOME.SERIOUSNESS_LABEL' | translate }}</span>\n          <p>{{ 'HOME.SERIOUSNESS_SLOGAN' | translate }}</p>\n        </div>\n      </div>\n\n\n      <div class=\"col-12 col-md-4\">\n          <div class=\"feature\">\n            <i class=\"material-icons\">event_available</i>\n            <span>{{ 'HOME.SERVICE_LABEL' | translate }}</span>\n            <p>{{ 'HOME.SERVICE_SLOGAN' | translate }}</p>\n          </div>\n        </div>\n\n\n    </div>\n  </div>\n</div>\n\n\n\n\n<div class=\"box-contact-info\">\n  <div class=\"container\">\n    <div class=\"row\">\n      <div class=\"col-12\">\n        \n        <h1>{{ 'APPLICATION_COMMON.OURS_HELP' | translate }} <span>{{ phone }}</span></h1>\n\n      </div>\n    </div>\n  </div>\n</div>\n\n\n\n\n\n<div class=\"container\">\n  <div class=\"row\">\n    <div class=\"col-12\">\n      <p class=\"text-content one\">\n        {{ 'ABOUT_US.HISTORY' | translate }}\n        {{ 'ABOUT_US.MUNDILABEL_TEAM' | translate }}\n      </p>\n    </div>\n  </div>\n</div>\n\n\n\n<div class=\"company-slogan-wrapper\">\n    <div class=\"container\">\n          \n      <div class=\"row\">\n        <div class=\"col-12\">\n               \n        <p class=\"slogan\">\n          {{ 'APPLICATION_COMMON.SLOGAN' | translate }}\n        </p>\n        <div class=\"slogan-line\"></div>\n\n      </div>\n    </div>\n  </div>\n</div>\n\n\n\n<div class=\"container\">\n    <div class=\"row\">\n      <div class=\"col-12\">\n        <p class=\"text-content two\">\n          {{ 'ABOUT_US.WAY_OF_WORKING' | translate }}\n          {{ 'ABOUT_US.WORK_METHODS' | translate }}\n        </p>\n      </div>\n    </div>\n  </div>\n\n\n\n\n<div class=\"background-image\" [style.background-image]=\" 'url(' + labelImageUrl + ')' \"></div>\n\n\n\n<div class=\"box-how-we-work\">\n  <div class=\"container\">\n    <div class=\"row\">\n      <div class=\"col-12\">\n        \n        <p class=\"slogan\">\n          {{ 'TITLES_BY_ROUTE.HOWWEWORK' | translate }}\n        </p>\n        <div class=\"slogan-line\"></div>\n        \n      </div>\n    </div>\n  </div>\n</div>\n\n\n\n\n\n<div class=\"box-ours-clients\">\n  <div class=\"container\">\n\n    <div class=\"row\">\n      <div class=\"col-12\">\n        <p class=\"text-content-decorate\">{{ 'HOME.OURS_CLIENTS' | translate }}:</p>\n      </div>  \n    </div>\n\n\n\n    <div class=\"row clients-logos-wrapper\">\n\n      <div class=\"col-6 col-md-5 col-lg-4 col-xl-3\">\n        <div class=\"our-client-logo\" [style.background-image]=\" 'url(' + wurthClientLogoUrl + ')' \"></div>    \n      </div>\n\n      <div class=\"col-3 col-md-3 col-lg-2 col-xl-1\">\n          <div class=\"our-client-logo\" [style.background-image]=\" 'url(' + ifemaClientLogoUrl + ')' \"></div>    \n        </div>\n\n      <div class=\"col-3 col-md-3 col-lg-2 col-xl-1\">\n        <div class=\"our-client-logo\" [style.background-image]=\" 'url(' + upsClientLogoUrl + ')' \"></div>    \n      </div>\n\n      <div class=\"col-6 col-md-5 col-lg-4 col-xl-3\">\n        <div class=\"our-client-logo\" [style.background-image]=\" 'url(' + lorealClientLogoUrl + ')' \"></div>    \n      </div>\n      \n      \n\n      \n\n      \n\n      <div class=\"col-6 col-md-5 col-lg-4 col-xl-3\">\n        <div class=\"our-client-logo\" [style.background-image]=\" 'url(' + seurClientLogoUrl + ')' \"></div>    \n      </div>\n\n\n      \n\n\n    </div>\n\n\n\n\n  </div>\n</div>\n\n\n\n\n\n\n<div class=\"box-contact-info last-box\">\n  <div class=\"container\">\n    <div class=\"row\">\n      <div class=\"col-12\">\n          <h1>{{ 'APPLICATION_COMMON.MAIL_CONNECTION' | translate }} <span>{{ mail }}</span></h1>\n      </div>\n    </div>\n  </div>\n</div>\n\n"
 
 /***/ }),
 
@@ -498,7 +505,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".font-title {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 3.5rem;\n  font-weight: 900; }\n\n.font-widget {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 1rem;\n  font-weight: 400; }\n\n.font-paragraph {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 0.88rem;\n  font-weight: 300; }\n\n.font-detail {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 0.75rem;\n  font-weight: 300; }\n\n.light-shadow {\n  box-shadow: 0px 0px 5px 0px rgba(41, 47, 56, 0.75); }\n\n.flip-icons, .company-slogan-wrapper p.slogan i.flip-icon, .box-how-we-work h1 i.flip-icon {\n  -webkit-transform: scaleX(-1);\n  transform: scaleX(-1);\n  -ms-filter: fliph;\n  /*IE*/\n  -webkit-filter: fliph;\n          filter: fliph;\n  /*IE*/ }\n\n.company-features-wrapper {\n  border-top: 4px solid #0D87D8;\n  padding: 2rem 0.5rem;\n  background-color: #292F38; }\n  .company-features-wrapper .feature {\n    height: 15rem;\n    padding: 0 1rem;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: column;\n            flex-direction: column;\n    -webkit-box-pack: start;\n        -ms-flex-pack: start;\n            justify-content: flex-start;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    color: rgba(255, 255, 255, 0.65) !important; }\n    .company-features-wrapper .feature span {\n      text-align: center;\n      font-size: 1.8rem;\n      font-weight: bold; }\n    .company-features-wrapper .feature p {\n      margin-top: 0.5rem;\n      opacity: 0.75;\n      text-align: center;\n      font-size: 0.88rem;\n      margin-bottom: 0 !important; }\n    .company-features-wrapper .feature i {\n      font-size: 6.5rem;\n      color: rgba(255, 255, 255, 0.35); }\n\n.company-slogan-wrapper {\n  padding: 5rem 1rem;\n  background-color: #FFFFFF; }\n  .company-slogan-wrapper p {\n    text-align: center;\n    margin-bottom: 0 !important;\n    color: rgba(41, 47, 56, 0.55) !important; }\n    .company-slogan-wrapper p span {\n      font-size: 3.5rem; }\n    .company-slogan-wrapper p.slogan i {\n      font-size: 3.5rem; }\n\n.box-contact-info {\n  padding: 2rem 0;\n  color: rgba(41, 47, 56, 0.55) !important;\n  background-color: rgba(41, 47, 56, 0.2); }\n  .box-contact-info.last-box {\n    background-color: #d6dde9; }\n  .box-contact-info h1 {\n    text-align: center;\n    font-size: 1.3rem !important;\n    margin-bottom: none; }\n    .box-contact-info h1 span {\n      font-size: 1.3rem !important;\n      font-weight: bold; }\n\n.background-image {\n  width: 100%;\n  height: 30rem;\n  background-size: cover;\n  background-repeat: no-repeat;\n  background-position: center; }\n\n.box-how-we-work {\n  border-top: 4px solid #0D87D8;\n  padding: 3rem 0; }\n  .box-how-we-work h1 {\n    color: rgba(41, 47, 56, 0.55);\n    text-align: center;\n    font-size: 3.5rem; }\n    .box-how-we-work h1 i {\n      font-size: 3rem; }\n\n.box-last-info {\n  width: 100%;\n  height: 15rem; }\n", ""]);
+exports.push([module.i, ".font-title {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 2.8rem;\n  font-weight: 900; }\n\n.font-subtitle {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 2rem;\n  font-weight: 200; }\n\n.font-widget {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 1rem;\n  font-weight: 400; }\n\n.font-paragraph {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 0.95rem;\n  font-weight: 300; }\n\n.font-detail {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 0.75rem;\n  font-weight: 300; }\n\n.title-line, .slogan-line {\n  width: 8%;\n  border-top: 14px solid rgba(13, 135, 216, 0.35); }\n\n.light-shadow {\n  box-shadow: 0px 0px 5px 0px rgba(41, 47, 56, 0.75); }\n\n.text-content-decorate, p.text-content {\n  text-align: justify;\n  font-size: 0.95rem;\n  color: rgba(41, 47, 56, 0.6); }\n\n.company-features-wrapper {\n  border-top: 4px solid #0D87D8;\n  padding: 2rem 0.5rem;\n  background-color: #292F38; }\n  .company-features-wrapper .feature {\n    height: 15rem;\n    padding: 0 1rem;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: column;\n            flex-direction: column;\n    -webkit-box-pack: start;\n        -ms-flex-pack: start;\n            justify-content: flex-start;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    color: rgba(255, 255, 255, 0.65) !important; }\n    .company-features-wrapper .feature span {\n      text-align: center;\n      font-size: 1.8rem;\n      font-weight: bold; }\n    .company-features-wrapper .feature p {\n      margin-top: 0.5rem;\n      opacity: 0.75;\n      text-align: center;\n      font-size: 0.95rem;\n      margin-bottom: 0 !important; }\n    .company-features-wrapper .feature i {\n      font-size: 6.5rem;\n      color: rgba(255, 255, 255, 0.35); }\n\n.company-slogan-wrapper {\n  padding: 5rem 1rem;\n  background-color: #FFFFFF; }\n  .company-slogan-wrapper p {\n    text-align: center;\n    margin-bottom: 0 !important; }\n\np.slogan {\n  color: rgba(41, 47, 56, 0.85) !important;\n  text-align: left !important;\n  font-size: 2.8rem;\n  font-weight: 200; }\n\n.box-contact-info {\n  padding: 2rem 0;\n  color: rgba(41, 47, 56, 0.55) !important;\n  background-color: rgba(41, 47, 56, 0.2); }\n  .box-contact-info.last-box {\n    background-color: #d6dde9; }\n  .box-contact-info h1 {\n    text-align: center;\n    font-size: 1.3rem !important;\n    margin-bottom: none; }\n    .box-contact-info h1 span {\n      font-size: 1.3rem !important;\n      font-weight: bold; }\n\n.background-image {\n  width: 100%;\n  height: 40rem;\n  background-size: cover;\n  background-repeat: no-repeat;\n  background-position: center;\n  background-attachment: scroll; }\n\np.text-content {\n  margin-bottom: 0; }\n  p.text-content.one {\n    margin-top: 3rem; }\n  p.text-content.two {\n    margin-bottom: 3rem; }\n\n.box-how-we-work {\n  border-top: 4px solid #0D87D8;\n  padding: 3rem 0; }\n  .box-how-we-work h1 {\n    color: rgba(41, 47, 56, 0.85);\n    text-align: left;\n    font-size: 2.8rem; }\n    .box-how-we-work h1 i {\n      font-size: 3rem; }\n\n.clients-logos-wrapper {\n  width: 100%;\n  height: 15rem;\n  margin-bottom: 3rem;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between; }\n  .clients-logos-wrapper div.our-client-logo {\n    height: 100%;\n    width: 100%;\n    margin: 2rem 1rem !important;\n    background-size: contain;\n    background-repeat: no-repeat;\n    background-position: center;\n    opacity: 0.45; }\n\n.box-last-info {\n  width: 100%;\n  height: 15rem; }\n\n@media (max-width: 576px) {\n  p.slogan {\n    font-size: 1.8rem; } }\n", ""]);
 
 // exports
 
@@ -535,6 +542,11 @@ var HomeComponent = (function () {
         this.phone = this.applicationSettings.PHONE_COMPANY;
         this.handImageUrl = this.applicationSettings.MUNDILABEL_HAND_HOME_IMAGE_URL;
         this.labelImageUrl = this.applicationSettings.MUNDILABEL_LABEL_IMAGE_URL;
+        this.upsClientLogoUrl = this.applicationSettings.MUNDILABEL_CLIENTS_LOGOS.ups;
+        this.lorealClientLogoUrl = this.applicationSettings.MUNDILABEL_CLIENTS_LOGOS.loreal;
+        this.wurthClientLogoUrl = this.applicationSettings.MUNDILABEL_CLIENTS_LOGOS.wurth;
+        this.seurClientLogoUrl = this.applicationSettings.MUNDILABEL_CLIENTS_LOGOS.seur;
+        this.ifemaClientLogoUrl = this.applicationSettings.MUNDILABEL_CLIENTS_LOGOS.ifema;
     }; // NgOnInit
     return HomeComponent;
 }()); // HomeComponent
@@ -550,68 +562,6 @@ HomeComponent = __decorate([
 
 var _a;
 //# sourceMappingURL=home.component.js.map
-
-/***/ }),
-
-/***/ "../../../../../src/app/components/how-we-work/how-we-work.component.html":
-/***/ (function(module, exports) {
-
-module.exports = "<p>\n  how-we-work works!\n</p>\n"
-
-/***/ }),
-
-/***/ "../../../../../src/app/components/how-we-work/how-we-work.component.scss":
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, "", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
-
-/***/ }),
-
-/***/ "../../../../../src/app/components/how-we-work/how-we-work.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HowWeWorkComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-var HowWeWorkComponent = (function () {
-    function HowWeWorkComponent() {
-    }
-    HowWeWorkComponent.prototype.ngOnInit = function () {
-    }; // NgOnInit
-    return HowWeWorkComponent;
-}()); // HowWeWorkComponent
-HowWeWorkComponent = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
-        selector: 'how-we-work',
-        template: __webpack_require__("../../../../../src/app/components/how-we-work/how-we-work.component.html"),
-        styles: [__webpack_require__("../../../../../src/app/components/how-we-work/how-we-work.component.scss")],
-        changeDetection: __WEBPACK_IMPORTED_MODULE_0__angular_core__["k" /* ChangeDetectionStrategy */].OnPush
-    }),
-    __metadata("design:paramtypes", [])
-], HowWeWorkComponent);
-
-//# sourceMappingURL=how-we-work.component.js.map
 
 /***/ }),
 
@@ -692,7 +642,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".font-title {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 3.5rem;\n  font-weight: 900; }\n\n.font-widget {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 1rem;\n  font-weight: 400; }\n\n.font-paragraph {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 0.88rem;\n  font-weight: 300; }\n\n.font-detail {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 0.75rem;\n  font-weight: 300; }\n\n.light-shadow {\n  box-shadow: 0px 0px 5px 0px rgba(41, 47, 56, 0.75); }\n\n.logotype {\n  max-width: 14rem;\n  max-height: 2.8rem;\n  height: 100%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center; }\n  .logotype:hover {\n    cursor: pointer; }\n  .logotype .img-logotype {\n    width: 14rem;\n    height: 2.8rem;\n    background-position: center;\n    background-attachment: unset;\n    background-repeat: no-repeat;\n    background-size: cover; }\n\n/*\nMedia query for dimension less of 450px of width */\n", ""]);
+exports.push([module.i, ".font-title {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 2.8rem;\n  font-weight: 900; }\n\n.font-subtitle {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 2rem;\n  font-weight: 200; }\n\n.font-widget {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 1rem;\n  font-weight: 400; }\n\n.font-paragraph {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 0.95rem;\n  font-weight: 300; }\n\n.font-detail {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 0.75rem;\n  font-weight: 300; }\n\n.title-line {\n  width: 8%;\n  border-top: 14px solid rgba(13, 135, 216, 0.35); }\n\n.light-shadow {\n  box-shadow: 0px 0px 5px 0px rgba(41, 47, 56, 0.75); }\n\n.logotype {\n  max-width: 14rem;\n  max-height: 2.8rem;\n  height: 100%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center; }\n  .logotype:hover {\n    cursor: pointer; }\n  .logotype .img-logotype {\n    width: 14rem;\n    height: 2.8rem;\n    background-position: center;\n    background-attachment: unset;\n    background-repeat: no-repeat;\n    background-size: cover; }\n\n/*\nMedia query for dimension less of 450px of width */\n", ""]);
 
 // exports
 
@@ -777,7 +727,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".font-title, .unknow-page-wrapper h1 {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 3.5rem;\n  font-weight: 900; }\n\n.font-widget {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 1rem;\n  font-weight: 400; }\n\n.font-paragraph {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 0.88rem;\n  font-weight: 300; }\n\n.font-detail {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 0.75rem;\n  font-weight: 300; }\n\n.light-shadow {\n  box-shadow: 0px 0px 5px 0px rgba(41, 47, 56, 0.75); }\n\n.unknow-page-wrapper {\n  margin-top: 20%; }\n  .unknow-page-wrapper h1 {\n    color: rgba(41, 47, 56, 0.5); }\n", ""]);
+exports.push([module.i, ".font-title, .unknow-page-wrapper h1 {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 2.8rem;\n  font-weight: 900; }\n\n.font-subtitle {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 2rem;\n  font-weight: 200; }\n\n.font-widget {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 1rem;\n  font-weight: 400; }\n\n.font-paragraph {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 0.95rem;\n  font-weight: 300; }\n\n.font-detail {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 0.75rem;\n  font-weight: 300; }\n\n.title-line {\n  width: 8%;\n  border-top: 14px solid rgba(13, 135, 216, 0.35); }\n\n.light-shadow {\n  box-shadow: 0px 0px 5px 0px rgba(41, 47, 56, 0.75); }\n\n.unknow-page-wrapper {\n  margin-top: 20%; }\n  .unknow-page-wrapper h1 {\n    color: rgba(41, 47, 56, 0.5); }\n", ""]);
 
 // exports
 
@@ -839,7 +789,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".font-title, .wallpaper-container .flex-wrapper .wallpaper-titles h1 {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 3.5rem;\n  font-weight: 900; }\n\n.font-widget {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 1rem;\n  font-weight: 400; }\n\n.font-paragraph {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 0.88rem;\n  font-weight: 300; }\n\n.font-detail {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 0.75rem;\n  font-weight: 300; }\n\n.light-shadow {\n  box-shadow: 0px 0px 5px 0px rgba(41, 47, 56, 0.75); }\n\n.wallpaper-container {\n  position: relative;\n  width: 100%;\n  height: 60vh;\n  background-position: top;\n  background-attachment: unset;\n  background-repeat: no-repeat;\n  background-size: cover;\n  z-index: -1; }\n  .wallpaper-container .flex-wrapper {\n    height: 100%;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: center;\n        -ms-flex-pack: center;\n            justify-content: center;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center; }\n    .wallpaper-container .flex-wrapper .wallpaper-titles {\n      margin: 3rem; }\n      .wallpaper-container .flex-wrapper .wallpaper-titles h1 {\n        font-size: 6.5rem !important;\n        color: #FFFFFF;\n        text-align: center; }\n\n@media (min-width: 1200px) {\n  .wallpaper-container {\n    height: 100vh !important; } }\n\n@media (min-width: 768px) and (max-width: 1200px) {\n  .wallpaper-container {\n    height: 60vh !important; }\n    .wallpaper-container .wallpaper-titles {\n      margin: 2rem; }\n      .wallpaper-container .wallpaper-titles h1 {\n        font-size: 3.5rem !important; } }\n\n@media (max-width: 576px) {\n  .wallpaper-container {\n    height: 40vh !important; }\n    .wallpaper-container .flex-wrapper .wallpaper-titles {\n      display: none; } }\n", ""]);
+exports.push([module.i, ".font-title, .wallpaper-container .flex-wrapper .wallpaper-titles h1 {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 2.8rem;\n  font-weight: 900; }\n\n.font-subtitle {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 2rem;\n  font-weight: 200; }\n\n.font-widget {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 1rem;\n  font-weight: 400; }\n\n.font-paragraph {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 0.95rem;\n  font-weight: 300; }\n\n.font-detail {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 0.75rem;\n  font-weight: 300; }\n\n.title-line {\n  width: 8%;\n  border-top: 14px solid rgba(13, 135, 216, 0.35); }\n\n.light-shadow {\n  box-shadow: 0px 0px 5px 0px rgba(41, 47, 56, 0.75); }\n\n.wallpaper-container {\n  position: relative;\n  width: 100%;\n  height: 60vh;\n  background-position: top;\n  background-attachment: unset;\n  background-repeat: no-repeat;\n  background-size: cover;\n  z-index: -1; }\n  .wallpaper-container .flex-wrapper {\n    height: 100%;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: center;\n        -ms-flex-pack: center;\n            justify-content: center;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center; }\n    .wallpaper-container .flex-wrapper .wallpaper-titles {\n      margin: 3rem; }\n      .wallpaper-container .flex-wrapper .wallpaper-titles h1 {\n        font-size: 6.5rem !important;\n        color: #FFFFFF;\n        text-align: center; }\n\n@media (min-width: 1200px) {\n  .wallpaper-container {\n    height: 100vh !important; } }\n\n@media (min-width: 768px) and (max-width: 1200px) {\n  .wallpaper-container {\n    height: 60vh !important; }\n    .wallpaper-container .wallpaper-titles {\n      margin: 2rem; }\n      .wallpaper-container .wallpaper-titles h1 {\n        font-size: 3.5rem !important; } }\n\n@media (max-width: 576px) {\n  .wallpaper-container {\n    height: 40vh !important;\n    margin-top: 3.5rem !important; }\n    .wallpaper-container .flex-wrapper .wallpaper-titles {\n      display: none; } }\n", ""]);
 
 // exports
 
@@ -1733,8 +1683,8 @@ var MundilabelComponent = (function () {
      */
     function MundilabelComponent(translate) {
         // Configure translate module to idiomatization of app
-        translate.setDefaultLang('en');
-        translate.use('en');
+        translate.setDefaultLang('es');
+        translate.use('es');
     } // Constructor
     return MundilabelComponent;
 }()); // MundilabelComponent
@@ -1768,24 +1718,22 @@ var _a;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_unknow_page_unknow_page_component__ = __webpack_require__("../../../../../src/app/components/unknow-page/unknow-page.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_home_home_component__ = __webpack_require__("../../../../../src/app/components/home/home.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_about_us_about_us_component__ = __webpack_require__("../../../../../src/app/components/about-us/about-us.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_how_we_work_how_we_work_component__ = __webpack_require__("../../../../../src/app/components/how-we-work/how-we-work.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_contact_contact_component__ = __webpack_require__("../../../../../src/app/components/contact/contact.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_footer_footer_component__ = __webpack_require__("../../../../../src/app/components/footer/footer.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__components_header_header_component__ = __webpack_require__("../../../../../src/app/components/header/header.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__components_header_components_navigator_navigator_component__ = __webpack_require__("../../../../../src/app/components/header/components/navigator/navigator.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__components_logotype_logotype_component__ = __webpack_require__("../../../../../src/app/components/logotype/logotype.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__components_wallpaper_wallpaper_component__ = __webpack_require__("../../../../../src/app/components/wallpaper/wallpaper.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__commons_mundilabel_settings__ = __webpack_require__("../../../../../src/app/commons/mundilabel.settings.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__commons_mundilabel_service__ = __webpack_require__("../../../../../src/app/commons/mundilabel.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__components_location_location_component__ = __webpack_require__("../../../../../src/app/components/location/location.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__modules_ngx_rawmaterial_components_raw_sidebar_raw_sidebar_component__ = __webpack_require__("../../../../../src/app/modules/ngx-rawmaterial/components/raw-sidebar/raw-sidebar.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_contact_contact_component__ = __webpack_require__("../../../../../src/app/components/contact/contact.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_footer_footer_component__ = __webpack_require__("../../../../../src/app/components/footer/footer.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_header_header_component__ = __webpack_require__("../../../../../src/app/components/header/header.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__components_header_components_navigator_navigator_component__ = __webpack_require__("../../../../../src/app/components/header/components/navigator/navigator.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__components_logotype_logotype_component__ = __webpack_require__("../../../../../src/app/components/logotype/logotype.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__components_wallpaper_wallpaper_component__ = __webpack_require__("../../../../../src/app/components/wallpaper/wallpaper.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__commons_mundilabel_settings__ = __webpack_require__("../../../../../src/app/commons/mundilabel.settings.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__commons_mundilabel_service__ = __webpack_require__("../../../../../src/app/commons/mundilabel.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__components_location_location_component__ = __webpack_require__("../../../../../src/app/components/location/location.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__modules_ngx_rawmaterial_components_raw_sidebar_raw_sidebar_component__ = __webpack_require__("../../../../../src/app/modules/ngx-rawmaterial/components/raw-sidebar/raw-sidebar.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-
 
 
 
@@ -1821,15 +1769,14 @@ MundilabelModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_7__components_unknow_page_unknow_page_component__["a" /* UnknowPageComponent */],
             __WEBPACK_IMPORTED_MODULE_8__components_home_home_component__["a" /* HomeComponent */],
             __WEBPACK_IMPORTED_MODULE_9__components_about_us_about_us_component__["a" /* AboutUsComponent */],
-            __WEBPACK_IMPORTED_MODULE_10__components_how_we_work_how_we_work_component__["a" /* HowWeWorkComponent */],
-            __WEBPACK_IMPORTED_MODULE_11__components_contact_contact_component__["a" /* ContactComponent */],
-            __WEBPACK_IMPORTED_MODULE_12__components_footer_footer_component__["a" /* FooterComponent */],
-            __WEBPACK_IMPORTED_MODULE_13__components_header_header_component__["a" /* HeaderComponent */],
-            __WEBPACK_IMPORTED_MODULE_14__components_header_components_navigator_navigator_component__["a" /* NavigatorComponent */],
-            __WEBPACK_IMPORTED_MODULE_15__components_logotype_logotype_component__["a" /* LogotypeComponent */],
-            __WEBPACK_IMPORTED_MODULE_16__components_wallpaper_wallpaper_component__["a" /* WallpaperComponent */],
-            __WEBPACK_IMPORTED_MODULE_19__components_location_location_component__["a" /* LocationComponent */],
-            __WEBPACK_IMPORTED_MODULE_20__modules_ngx_rawmaterial_components_raw_sidebar_raw_sidebar_component__["a" /* RawSidebarComponent */]
+            __WEBPACK_IMPORTED_MODULE_10__components_contact_contact_component__["a" /* ContactComponent */],
+            __WEBPACK_IMPORTED_MODULE_11__components_footer_footer_component__["a" /* FooterComponent */],
+            __WEBPACK_IMPORTED_MODULE_12__components_header_header_component__["a" /* HeaderComponent */],
+            __WEBPACK_IMPORTED_MODULE_13__components_header_components_navigator_navigator_component__["a" /* NavigatorComponent */],
+            __WEBPACK_IMPORTED_MODULE_14__components_logotype_logotype_component__["a" /* LogotypeComponent */],
+            __WEBPACK_IMPORTED_MODULE_15__components_wallpaper_wallpaper_component__["a" /* WallpaperComponent */],
+            __WEBPACK_IMPORTED_MODULE_18__components_location_location_component__["a" /* LocationComponent */],
+            __WEBPACK_IMPORTED_MODULE_19__modules_ngx_rawmaterial_components_raw_sidebar_raw_sidebar_component__["a" /* RawSidebarComponent */]
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -1838,8 +1785,8 @@ MundilabelModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_3_ng2_translate__["b" /* TranslateModule */].forRoot()
         ],
         providers: [
-            __WEBPACK_IMPORTED_MODULE_18__commons_mundilabel_service__["a" /* MundilabelService */],
-            __WEBPACK_IMPORTED_MODULE_17__commons_mundilabel_settings__["a" /* MundilabelSettingsService */],
+            __WEBPACK_IMPORTED_MODULE_17__commons_mundilabel_service__["a" /* MundilabelService */],
+            __WEBPACK_IMPORTED_MODULE_16__commons_mundilabel_settings__["a" /* MundilabelSettingsService */],
             __WEBPACK_IMPORTED_MODULE_3_ng2_translate__["c" /* TranslateService */],
             {
                 provide: __WEBPACK_IMPORTED_MODULE_3_ng2_translate__["a" /* TranslateLoader */],
@@ -1865,10 +1812,9 @@ MundilabelModule = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_home_home_component__ = __webpack_require__("../../../../../src/app/components/home/home.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_about_us_about_us_component__ = __webpack_require__("../../../../../src/app/components/about-us/about-us.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_how_we_work_how_we_work_component__ = __webpack_require__("../../../../../src/app/components/how-we-work/how-we-work.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_contact_contact_component__ = __webpack_require__("../../../../../src/app/components/contact/contact.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_location_location_component__ = __webpack_require__("../../../../../src/app/components/location/location.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_unknow_page_unknow_page_component__ = __webpack_require__("../../../../../src/app/components/unknow-page/unknow-page.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_contact_contact_component__ = __webpack_require__("../../../../../src/app/components/contact/contact.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_location_location_component__ = __webpack_require__("../../../../../src/app/components/location/location.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_unknow_page_unknow_page_component__ = __webpack_require__("../../../../../src/app/components/unknow-page/unknow-page.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1882,15 +1828,13 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-
 var MundilabelRoutes = [
     { path: '', pathMatch: 'full', redirectTo: 'home' },
     { path: 'home', component: __WEBPACK_IMPORTED_MODULE_2__components_home_home_component__["a" /* HomeComponent */] },
     { path: 'about', component: __WEBPACK_IMPORTED_MODULE_3__components_about_us_about_us_component__["a" /* AboutUsComponent */] },
-    { path: 'howwework', component: __WEBPACK_IMPORTED_MODULE_4__components_how_we_work_how_we_work_component__["a" /* HowWeWorkComponent */] },
-    { path: 'location', component: __WEBPACK_IMPORTED_MODULE_6__components_location_location_component__["a" /* LocationComponent */] },
-    { path: 'contact', component: __WEBPACK_IMPORTED_MODULE_5__components_contact_contact_component__["a" /* ContactComponent */] },
-    { path: '**', component: __WEBPACK_IMPORTED_MODULE_7__components_unknow_page_unknow_page_component__["a" /* UnknowPageComponent */] }
+    { path: 'location', component: __WEBPACK_IMPORTED_MODULE_5__components_location_location_component__["a" /* LocationComponent */] },
+    { path: 'contact', component: __WEBPACK_IMPORTED_MODULE_4__components_contact_contact_component__["a" /* ContactComponent */] },
+    { path: '**', component: __WEBPACK_IMPORTED_MODULE_6__components_unknow_page_unknow_page_component__["a" /* UnknowPageComponent */] }
 ];
 var MundilabelRouting = (function () {
     function MundilabelRouting() {
