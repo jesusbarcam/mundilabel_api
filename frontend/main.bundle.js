@@ -1687,7 +1687,7 @@ var _a, _b, _c, _d;
 /***/ "../../../../../src/app/modules/ngx-rawmaterial/components/raw-sidebar/raw-sidebar.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n\n<ng-container *ngIf=\" !isClosed \">\n  <div class=\"raw-sidebar\" [class.open]=\" isOpen \" [class.close]=\" !isOpen \" raw-stopscroll >\n    <div class=\"sidebar-content-wrapper\">\n      <ng-content></ng-content>\n    </div>\n  </div>\n</ng-container>\n\n\n"
+module.exports = "\n\n<ng-container *ngIf=\" !isClosed \">\n  <div class=\"raw-sidebar\" [class.open]=\" isOpen \" [class.close]=\" !isOpen \" [raw-stopscroll]=\" isOpen \" >\n    <div class=\"sidebar-content-wrapper\">\n      <ng-content></ng-content>\n    </div>\n  </div>\n</ng-container>\n\n\n"
 
 /***/ }),
 
@@ -1885,9 +1885,16 @@ var RawStopScrollDirective = (function () {
         // left: 37, up: 38, right: 39, down: 40,
         // spacebar: 32, pageup: 33, pagedown: 34, end: 35, home: 36
         this.keys = { 37: 1, 38: 1, 39: 1, 40: 1 };
-    }
+    } // Constructor
+    RawStopScrollDirective.prototype.ngOnChanges = function (changes) {
+        if (changes.stopscroll && !changes.stopscroll.currentValue) {
+            this.enableScroll();
+        } // If
+    }; // NgOnChanges
     RawStopScrollDirective.prototype.mouseOver = function () {
-        this.disableScroll();
+        if (this.stopscroll) {
+            this.disableScroll();
+        } // if
     }; // MouseOver
     RawStopScrollDirective.prototype.mouseOut = function () {
         this.enableScroll();
@@ -1949,6 +1956,10 @@ var RawStopScrollDirective = (function () {
     }; // EnableScroll
     return RawStopScrollDirective;
 }()); // RawStopScrollDirective
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])('raw-stopscroll'),
+    __metadata("design:type", Boolean)
+], RawStopScrollDirective.prototype, "stopscroll", void 0);
 __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* HostListener */])('mouseover', []),
     __metadata("design:type", Function),
