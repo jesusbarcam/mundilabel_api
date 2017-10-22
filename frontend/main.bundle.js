@@ -37,9 +37,10 @@ webpackEmptyAsyncContext.id = "../../../../../src/$$_gendir lazy recursive";
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MundilabelService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs__ = __webpack_require__("../../../../rxjs/Rx.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__mundilabel_routing__ = __webpack_require__("../../../../../src/app/mundilabel.routing.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs__ = __webpack_require__("../../../../rxjs/Rx.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__mundilabel_routing__ = __webpack_require__("../../../../../src/app/mundilabel.routing.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -52,25 +53,71 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var MundilabelService = (function () {
-    function MundilabelService() {
-        this.activatedRoute = new __WEBPACK_IMPORTED_MODULE_1_rxjs__["BehaviorSubject"](__WEBPACK_IMPORTED_MODULE_2__mundilabel_routing__["a" /* MundilabelRoutes */][0].path);
+    function MundilabelService(router) {
+        this.router = router;
+        this.activatedRoute = new __WEBPACK_IMPORTED_MODULE_2_rxjs__["BehaviorSubject"](__WEBPACK_IMPORTED_MODULE_3__mundilabel_routing__["a" /* MundilabelRoutes */][0].path);
         this.activatedRoute$ = this.activatedRoute.asObservable();
+        this.activatedSidebar = new __WEBPACK_IMPORTED_MODULE_2_rxjs__["BehaviorSubject"](false);
+        this.activatedSidebar$ = this.activatedSidebar.asObservable();
     } // Constructor
     /**
      * @method
+     * @public
+     * @description
+     */
+    MundilabelService.prototype.sidebarIsOpen = function () {
+        return this.activatedSidebar.getValue();
+    }; // SidebarIsOpen
+    /**
+     * @method
+     * @public
      * @param nextRoute
      */
     MundilabelService.prototype.activateRoute = function (nextRoute) {
         this.activatedRoute.next(nextRoute);
     }; // activateRoute
+    /**
+     * @method
+     * @public
+     * @param data
+     */
+    MundilabelService.prototype.whenChangeActivedRoute = function (data) {
+        var currentUrl = data.url.replace('/', '');
+        currentUrl = (currentUrl === '') ? __WEBPACK_IMPORTED_MODULE_3__mundilabel_routing__["a" /* MundilabelRoutes */][1].path : currentUrl;
+        this.activateRoute(currentUrl);
+        window.scrollTo(0, 0);
+        return currentUrl;
+    }; // WhenChangeActivedRoute
+    /**
+     * @method
+     * @public
+     * @param indexRoute
+     */
+    MundilabelService.prototype.navigationTo = function (indexRoute) {
+        var nextRoute = __WEBPACK_IMPORTED_MODULE_3__mundilabel_routing__["a" /* MundilabelRoutes */][indexRoute].path;
+        if (this.sidebarIsOpen()) {
+            this.changeSidebarState();
+        } // If
+        this.router.navigateByUrl(nextRoute);
+    }; // NavigationTo
+    /**
+     * @method
+     * @public
+     * @param newState
+     */
+    MundilabelService.prototype.changeSidebarState = function () {
+        this.activatedSidebar.next(!this.activatedSidebar.getValue());
+    }; // ChangeSidebarState
     return MundilabelService;
 }()); // MundilabelService
 MundilabelService = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Injectable */])(),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */]) === "function" && _a || Object])
 ], MundilabelService);
 
+var _a;
 //# sourceMappingURL=mundilabel.service.js.map
 
 /***/ }),
@@ -128,7 +175,7 @@ MundilabelSettingsService = __decorate([
 /***/ "../../../../../src/app/components/about-us/about-us.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n<div class=\"container\">\n  <div class=\"row\">\n    <div class=\"col-12\">\n      \n      <h1 class=\"section-title\">{{ 'NAVIGATION_ROUTE.ABOUT_US' | translate }}</h1>\n      <h2 class=\"section-subtitle\">{{ 'ABOUT_US.SECTION_SUBTITLE' | translate }}</h2>\n      \n      <p class=\"section-text\">\n        {{ 'ABOUT_US.HISTORY' | translate }}\n        {{ 'ABOUT_US.COMPANY_POLITICS' | translate }}\n        {{ 'ABOUT_US.WAY_OF_WORKING' | translate }}\n        <br/>\n        <br/>\n        {{ 'ABOUT_US.MUNDILABEL_TEAM' | translate }}\n      </p>\n\n\n      <h1 class=\"title-text\">{{ 'ABOUT_US.TITLE_1' | translate }}</h1>\n      <div class=\"title-line\"></div>\n\n\n      <p class=\"section-text\">\n        {{ 'ABOUT_US.WORK_METHODS' | translate }}\n        <span [innerHTML]=\" 'ABOUT_US.TARGETS' | translate \"></span>\n      </p>\n\n      <br/>\n      <br/>\n\n      <p class=\"section-text\">\n          {{ 'ABOUT_US.AT_PRODUCTION' | translate }}\n          <span [innerHTML]=\" 'ABOUT_US.KINDS_OF_PRODUCTION' | translate \"></span>\n      </p>\n\n\n\n        <h1 class=\"title-text\">{{ 'ABOUT_US.OUR_PRODUCTS' | translate }}</h1>\n        <div class=\"title-line\"></div>\n    \n    </div>\n  </div>\n</div>\n\n\n\n\n"
+module.exports = "\n<div class=\"container\">\n  <div class=\"row\">\n    <div class=\"col-12\">\n      \n      <h1 class=\"section-title\">{{ 'NAVIGATION_ROUTE.ABOUT_US' | translate }}</h1>\n      <h2 class=\"section-subtitle\">{{ 'ABOUT_US.SECTION_SUBTITLE' | translate }}</h2>\n      \n      <p class=\"section-text\">\n        {{ 'ABOUT_US.HISTORY' | translate }}\n        {{ 'ABOUT_US.COMPANY_POLITICS' | translate }}\n        {{ 'ABOUT_US.WAY_OF_WORKING' | translate }}\n        <br/>\n        <br/>\n        {{ 'ABOUT_US.MUNDILABEL_TEAM' | translate }}\n      </p>\n\n\n      <h1 class=\"title-text\">{{ 'ABOUT_US.TITLE_1' | translate }}</h1>\n      <div class=\"title-line\"></div>\n\n\n      <p class=\"section-text\">\n        {{ 'ABOUT_US.WORK_METHODS' | translate }}\n        <span [innerHTML]=\" 'ABOUT_US.TARGETS' | translate \"></span>\n      </p>\n\n      <br/>\n      <br/>\n\n      <p class=\"section-text\">\n          <span [innerHTML]=\" 'ABOUT_US.AT_PRODUCTION' | translate \"></span>\n          <span [innerHTML]=\" 'ABOUT_US.KINDS_OF_PRODUCTION' | translate \"></span>\n      </p>\n\n\n\n        <h1 class=\"title-text\">{{ 'ABOUT_US.OUR_PRODUCTS' | translate }}</h1>\n        <div class=\"title-line\"></div>\n    \n    </div>\n  </div>\n</div>\n\n\n\n\n"
 
 /***/ }),
 
@@ -140,7 +187,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".font-title, .section-title {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 2.8rem;\n  font-weight: 900; }\n\n.font-subtitle, .section-subtitle {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 2rem;\n  font-weight: 200; }\n\n.font-widget {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 1rem;\n  font-weight: 400; }\n\n.font-paragraph, .section-text {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 0.95rem;\n  font-weight: 300; }\n\n.font-detail {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 0.75rem;\n  font-weight: 300; }\n\n.title-line {\n  width: 8%;\n  border-top: 14px solid rgba(13, 135, 216, 0.35); }\n\n.light-shadow {\n  box-shadow: 0px 0px 5px 0px rgba(41, 47, 56, 0.75); }\n\n.section-title {\n  font-size: 3.8rem;\n  background-color: rgba(13, 135, 216, 0.35);\n  padding: 0.5rem; }\n\n.section-subtitle {\n  margin-bottom: 1rem;\n  color: rgba(41, 47, 56, 0.85);\n  opacity: 0.5; }\n\n.section-text {\n  color: rgba(41, 47, 56, 0.85); }\n\n.container {\n  margin-top: 3rem;\n  margin-bottom: 3rem; }\n\n.title-text {\n  font-size: 2rem;\n  font-weight: 200;\n  color: rgba(41, 47, 56, 0.85);\n  margin-top: 3rem; }\n\n.title-line {\n  margin-bottom: 3rem; }\n", ""]);
+exports.push([module.i, ".font-title, .section-title {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 2.8rem;\n  font-weight: 900; }\n\n.font-subtitle, .section-subtitle {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 2rem;\n  font-weight: 200; }\n\n.font-widget {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 1rem;\n  font-weight: 400; }\n\n.font-paragraph, .section-text {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 0.95rem;\n  font-weight: 300; }\n\n.font-detail {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 0.75rem;\n  font-weight: 300; }\n\n.title-line {\n  width: 8%;\n  border-top: 14px solid rgba(13, 135, 216, 0.35); }\n\n.light-shadow {\n  box-shadow: 0px 0px 5px 0px rgba(41, 47, 56, 0.75); }\n\n.section-title {\n  font-size: 3.8rem;\n  background-color: rgba(13, 135, 216, 0.35);\n  padding: 0.5rem; }\n\n.section-subtitle {\n  margin-bottom: 1rem;\n  color: rgba(41, 47, 56, 0.85);\n  opacity: 0.5; }\n\n.section-text {\n  color: rgba(41, 47, 56, 0.85); }\n\n.container {\n  margin-top: 3rem;\n  margin-bottom: 3rem; }\n\n.title-text {\n  font-size: 2rem;\n  font-weight: 200;\n  color: rgba(41, 47, 56, 0.85);\n  margin-top: 3rem; }\n\n.title-line {\n  margin-bottom: 3rem; }\n\n@media (max-width: 576px) {\n  .section-title {\n    font-size: 2.3rem !important; }\n  .section-subtitle {\n    font-size: 1.5rem !important; } }\n", ""]);
 
 // exports
 
@@ -326,7 +373,7 @@ var _a;
 /***/ "../../../../../src/app/components/header/components/navigator/navigator.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"navigator-wrapper\">\n  <span [class.activated]=\" isActivated(1) \" class=\"item\" (click)=\" navigationTo(1) \">{{ 'NAVIGATION_ROUTE.HOME' | translate }}</span>\n  <span [class.activated]=\" isActivated(2) \" class=\"item\" (click)=\" navigationTo(2)\">{{ 'NAVIGATION_ROUTE.ABOUT_US' | translate }}</span>\n  <span [class.activated]=\" isActivated(3) \" class=\"item\" (click)=\" navigationTo(3)\">{{ 'NAVIGATION_ROUTE.LOCATION' | translate }}</span>\n  <span [class.activated]=\" isActivated(4) \" class=\"item\" (click)=\" navigationTo(4)\">{{ 'NAVIGATION_ROUTE.CONTACT' | translate }}</span>\n</div>\n"
+module.exports = "<div class=\"navigator-wrapper\">\n  <span [class.activated]=\" isActivated(1) \" class=\"item\" (click)=\" navigationTo(1) \">{{ 'NAVIGATION_ROUTE.HOME' | translate }}</span>\n  <span [class.activated]=\" isActivated(2) \" class=\"item\" (click)=\" navigationTo(2)\">{{ 'NAVIGATION_ROUTE.ABOUT_US' | translate }}</span>\n  <span [class.activated]=\" isActivated(3) \" class=\"item\" (click)=\" navigationTo(3)\">{{ 'NAVIGATION_ROUTE.LOCATION' | translate }}</span>\n  <span [class.activated]=\" isActivated(4) \" class=\"item\" (click)=\" navigationTo(4)\">{{ 'NAVIGATION_ROUTE.CONTACT' | translate }}</span>\n</div>\n\n\n<div class=\"mini-navigator-wrapper\" (click)=\"openNavigationSidebar()\">\n  <i class=\"material-icons\">menu</i>\n</div>"
 
 /***/ }),
 
@@ -338,7 +385,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".font-title {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 2.8rem;\n  font-weight: 900; }\n\n.font-subtitle {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 2rem;\n  font-weight: 200; }\n\n.font-widget, .navigator-wrapper .item {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 1rem;\n  font-weight: 400; }\n\n.font-paragraph {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 0.95rem;\n  font-weight: 300; }\n\n.font-detail {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 0.75rem;\n  font-weight: 300; }\n\n.title-line {\n  width: 8%;\n  border-top: 14px solid rgba(13, 135, 216, 0.35); }\n\n.light-shadow {\n  box-shadow: 0px 0px 5px 0px rgba(41, 47, 56, 0.75); }\n\n:host {\n  width: 100%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  background-color: none;\n  -ms-flex-pack: distribute;\n      justify-content: space-around;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center; }\n\n.navigator-wrapper {\n  height: 100%;\n  width: 100%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-pack: distribute;\n      justify-content: space-around; }\n  .navigator-wrapper .item {\n    color: #292F38;\n    border-radius: 3px;\n    padding: 0.2rem 2rem; }\n    .navigator-wrapper .item.activated {\n      color: #F30707; }\n      .navigator-wrapper .item.activated:hover {\n        cursor: default;\n        background-color: none !important; }\n    .navigator-wrapper .item:not(.activated):hover {\n      cursor: pointer;\n      background-color: rgba(255, 255, 255, 0.1); }\n\n.mini-navigator-wrapper {\n  display: none;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  color: #292F38; }\n  .mini-navigator-wrapper i {\n    font-size: 1.65rem; }\n\n@media (max-width: 992px) {\n  .navigator-wrapper {\n    display: none !important; }\n  .mini-navigator-wrapper {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex; } }\n", ""]);
+exports.push([module.i, ".font-title {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 2.8rem;\n  font-weight: 900; }\n\n.font-subtitle {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 2rem;\n  font-weight: 200; }\n\n.font-widget, .navigator-wrapper .item {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 1rem;\n  font-weight: 400; }\n\n.font-paragraph {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 0.95rem;\n  font-weight: 300; }\n\n.font-detail {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 0.75rem;\n  font-weight: 300; }\n\n.title-line {\n  width: 8%;\n  border-top: 14px solid rgba(13, 135, 216, 0.35); }\n\n.light-shadow {\n  box-shadow: 0px 0px 5px 0px rgba(41, 47, 56, 0.75); }\n\n:host {\n  width: 100%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  background-color: none;\n  -ms-flex-pack: distribute;\n      justify-content: space-around;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center; }\n\n.navigator-wrapper {\n  height: 100%;\n  width: 100%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-pack: distribute;\n      justify-content: space-around; }\n  .navigator-wrapper .item {\n    color: #292F38;\n    border-radius: 3px;\n    padding: 0.2rem 2rem; }\n    .navigator-wrapper .item.activated {\n      color: #0D87D8; }\n      .navigator-wrapper .item.activated:hover {\n        cursor: default;\n        background-color: none !important; }\n    .navigator-wrapper .item:not(.activated):hover {\n      cursor: pointer;\n      background-color: rgba(255, 255, 255, 0.1); }\n\n.mini-navigator-wrapper {\n  display: none;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  color: #292F38; }\n  .mini-navigator-wrapper:hover {\n    cursor: pointer; }\n  .mini-navigator-wrapper:active {\n    color: #0D87D8; }\n  .mini-navigator-wrapper i {\n    font-size: 2.65rem; }\n\n@media (max-width: 992px) {\n  .navigator-wrapper {\n    display: none !important; }\n  .mini-navigator-wrapper {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex; } }\n", ""]);
 
 // exports
 
@@ -380,8 +427,7 @@ var NavigatorComponent = (function () {
         var _this = this;
         this.router.events.subscribe(function (data) {
             if (data && data.url) {
-                _this.currentUrl = data.url.replace('/', '');
-                _this.mundilabelService.activateRoute(_this.currentUrl);
+                _this.currentUrl = _this.mundilabelService.whenChangeActivedRoute(data);
                 _this.changeDetection.markForCheck();
             } // If
         }); // Subscribe
@@ -402,9 +448,18 @@ var NavigatorComponent = (function () {
      * @description
      */
     NavigatorComponent.prototype.navigationTo = function (indexRoute) {
-        var nextRoute = __WEBPACK_IMPORTED_MODULE_2__mundilabel_routing__["a" /* MundilabelRoutes */][indexRoute].path;
-        this.router.navigateByUrl(nextRoute);
+        this.mundilabelService.navigationTo(indexRoute);
     }; // NavigationTo
+    /**
+     * @method
+     * @public
+     * @description
+     * When is a movile device, user click
+     * to open sidebar navigator component
+     */
+    NavigatorComponent.prototype.openNavigationSidebar = function () {
+        this.mundilabelService.changeSidebarState();
+    }; // OpenNavigationSidebar
     return NavigatorComponent;
 }()); // NavigatorComponent
 NavigatorComponent = __decorate([
@@ -425,7 +480,7 @@ var _a, _b, _c;
 /***/ "../../../../../src/app/components/header/header.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n<div class=\"header\" [class.top-scroll]=\"topScroll\">\n  <div class=\"container\">\n    <div class=\"items-container\">\n\n\n      <div class=\"item\">\n        <logotype [logotypeImageURL]=\" logotypeImageURL \" ></logotype>\n      </div>\n\n\n      <div class=\"item\">\n        <div class=\"navigator-wrapper\">\n            <navigator></navigator>\n        </div>\n      </div>\n\n    </div>\n  </div>\n</div>"
+module.exports = "\n<div class=\"header\" [class.top-scroll]=\"topScroll\">\n  <div class=\"container\">\n    <div class=\"items-container\">\n\n\n      <div class=\"item\">\n        <logotype [logotypeImageURL]=\" logotypeImageURL \" ></logotype>\n      </div>\n\n\n      <div class=\"item\">\n        <div class=\"navigator-wrapper\">\n          <navigator></navigator>\n        </div>\n      </div>\n\n    </div>\n  </div>\n</div>"
 
 /***/ }),
 
@@ -437,7 +492,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".header {\n  width: 100%;\n  height: 4.8rem;\n  border-top: 4px solid #0D87D8;\n  z-index: 1500;\n  position: fixed;\n  left: 0;\n  top: 0;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  background-color: white !important;\n  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.45); }\n  .header .items-container {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: justify;\n        -ms-flex-pack: justify;\n            justify-content: space-between;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center; }\n  .header.top-scroll {\n    background-color: #292F38 !important; }\n", ""]);
+exports.push([module.i, ".header {\n  width: 100%;\n  height: 4.8rem;\n  border-top: 2px solid #ff0000;\n  z-index: 1500;\n  position: fixed;\n  left: 0;\n  top: 0;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  background-color: white !important;\n  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.45); }\n  .header .items-container {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: justify;\n        -ms-flex-pack: justify;\n            justify-content: space-between;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center; }\n  .header.top-scroll {\n    background-color: #292F38 !important; }\n\n@media (max-width: 576px) {\n  .header {\n    height: 3rem; } }\n", ""]);
 
 // exports
 
@@ -493,7 +548,7 @@ var _a;
 /***/ "../../../../../src/app/components/home/home.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n\n\n<div class=\"company-features-wrapper\">\n  <div class=\"container\">\n        \n    <div class=\"row\">\n      \n      <div class=\"col-12 col-md-4\">\n        <div class=\"feature\">\n          <i class=\"material-icons\">local_play</i>\n          <span>{{ 'HOME.QUALITY_LABEL' | translate }}</span>\n          <p>{{ 'HOME.QUALITY_SLOGAN' | translate }}</p>\n        </div>\n      </div>\n\n      <div class=\"col-12 col-md-4\">\n        <div class=\"feature\">\n          <i class=\"material-icons\">new_releases</i>\n          <span>{{ 'HOME.SERIOUSNESS_LABEL' | translate }}</span>\n          <p>{{ 'HOME.SERIOUSNESS_SLOGAN' | translate }}</p>\n        </div>\n      </div>\n\n\n      <div class=\"col-12 col-md-4\">\n          <div class=\"feature\">\n            <i class=\"material-icons\">event_available</i>\n            <span>{{ 'HOME.SERVICE_LABEL' | translate }}</span>\n            <p>{{ 'HOME.SERVICE_SLOGAN' | translate }}</p>\n          </div>\n        </div>\n\n\n    </div>\n  </div>\n</div>\n\n\n\n\n<div class=\"box-contact-info\">\n  <div class=\"container\">\n    <div class=\"row\">\n      <div class=\"col-12\">\n        \n        <h1>{{ 'APPLICATION_COMMON.OURS_HELP' | translate }} <span>{{ phone }}</span></h1>\n\n      </div>\n    </div>\n  </div>\n</div>\n\n\n\n\n\n<div class=\"container\">\n  <div class=\"row\">\n    <div class=\"col-12\">\n      <p class=\"text-content one\">\n        {{ 'ABOUT_US.HISTORY' | translate }}\n        {{ 'ABOUT_US.MUNDILABEL_TEAM' | translate }}\n      </p>\n    </div>\n  </div>\n</div>\n\n\n\n<div class=\"company-slogan-wrapper\">\n    <div class=\"container\">\n          \n      <div class=\"row\">\n        <div class=\"col-12\">\n               \n        <p class=\"slogan\">\n          {{ 'APPLICATION_COMMON.SLOGAN' | translate }}\n        </p>\n        <div class=\"slogan-line\"></div>\n\n      </div>\n    </div>\n  </div>\n</div>\n\n\n\n<div class=\"container\">\n    <div class=\"row\">\n      <div class=\"col-12\">\n        <p class=\"text-content two\">\n          {{ 'ABOUT_US.WAY_OF_WORKING' | translate }}\n          {{ 'ABOUT_US.WORK_METHODS' | translate }}\n        </p>\n      </div>\n    </div>\n  </div>\n\n\n\n\n<div class=\"background-image\" [style.background-image]=\" 'url(' + labelImageUrl + ')' \"></div>\n\n\n\n<div class=\"box-how-we-work\">\n  <div class=\"container\">\n    <div class=\"row\">\n      <div class=\"col-12\">\n        \n        <p class=\"slogan\">\n          {{ 'TITLES_BY_ROUTE.HOWWEWORK' | translate }}\n        </p>\n        <div class=\"slogan-line\"></div>\n        \n      </div>\n    </div>\n  </div>\n</div>\n\n\n\n\n\n<div class=\"box-ours-clients\">\n  <div class=\"container\">\n\n    <div class=\"row\">\n      <div class=\"col-12\">\n        <p class=\"text-content-decorate\">{{ 'HOME.OURS_CLIENTS' | translate }}:</p>\n      </div>  \n    </div>\n\n\n\n    <div class=\"row clients-logos-wrapper\">\n\n      <div class=\"col-6 col-md-5 col-lg-4 col-xl-3\">\n        <div class=\"our-client-logo\" [style.background-image]=\" 'url(' + wurthClientLogoUrl + ')' \"></div>    \n      </div>\n\n      <div class=\"col-3 col-md-3 col-lg-2 col-xl-1\">\n          <div class=\"our-client-logo\" [style.background-image]=\" 'url(' + ifemaClientLogoUrl + ')' \"></div>    \n        </div>\n\n      <div class=\"col-3 col-md-3 col-lg-2 col-xl-1\">\n        <div class=\"our-client-logo\" [style.background-image]=\" 'url(' + upsClientLogoUrl + ')' \"></div>    \n      </div>\n\n      <div class=\"col-6 col-md-5 col-lg-4 col-xl-3\">\n        <div class=\"our-client-logo\" [style.background-image]=\" 'url(' + lorealClientLogoUrl + ')' \"></div>    \n      </div>\n      \n      \n\n      \n\n      \n\n      <div class=\"col-6 col-md-5 col-lg-4 col-xl-3\">\n        <div class=\"our-client-logo\" [style.background-image]=\" 'url(' + seurClientLogoUrl + ')' \"></div>    \n      </div>\n\n\n      \n\n\n    </div>\n\n\n\n\n  </div>\n</div>\n\n\n\n\n\n\n<div class=\"box-contact-info last-box\">\n  <div class=\"container\">\n    <div class=\"row\">\n      <div class=\"col-12\">\n          <h1>{{ 'APPLICATION_COMMON.MAIL_CONNECTION' | translate }} <span>{{ mail }}</span></h1>\n      </div>\n    </div>\n  </div>\n</div>\n\n"
+module.exports = "\n\n\n<div class=\"company-features-wrapper\">\n  <div class=\"container\">\n        \n    <div class=\"row\">\n      \n      <div class=\"col-12 col-md-4\">\n        <div class=\"feature\">\n          <i class=\"material-icons\">local_play</i>\n          <span>{{ 'HOME.QUALITY_LABEL' | translate }}</span>\n          <p>{{ 'HOME.QUALITY_SLOGAN' | translate }}</p>\n        </div>\n      </div>\n\n      <div class=\"col-12 col-md-4\">\n        <div class=\"feature\">\n          <i class=\"material-icons\">new_releases</i>\n          <span>{{ 'HOME.SERIOUSNESS_LABEL' | translate }}</span>\n          <p>{{ 'HOME.SERIOUSNESS_SLOGAN' | translate }}</p>\n        </div>\n      </div>\n\n\n      <div class=\"col-12 col-md-4\">\n          <div class=\"feature\">\n            <i class=\"material-icons\">event_available</i>\n            <span>{{ 'HOME.SERVICE_LABEL' | translate }}</span>\n            <p>{{ 'HOME.SERVICE_SLOGAN' | translate }}</p>\n          </div>\n        </div>\n\n\n    </div>\n  </div>\n</div>\n\n\n\n\n<div class=\"box-contact-info\">\n  <div class=\"container\">\n    <div class=\"row\">\n      <div class=\"col-12\">\n        \n        <h1>{{ 'APPLICATION_COMMON.OURS_HELP' | translate }} <span>{{ phone }}</span></h1>\n\n      </div>\n    </div>\n  </div>\n</div>\n\n\n\n\n\n<div class=\"container\">\n  <div class=\"row\">\n    <div class=\"col-12\">\n      <p class=\"text-content one\">\n        {{ 'ABOUT_US.HISTORY' | translate }}\n        {{ 'ABOUT_US.MUNDILABEL_TEAM' | translate }}\n      </p>\n    </div>\n  </div>\n</div>\n\n\n\n<div class=\"company-slogan-wrapper\">\n    <div class=\"container\">\n          \n      <div class=\"row\">\n        <div class=\"col-12\">\n               \n        <p class=\"slogan\">\n          {{ 'APPLICATION_COMMON.SLOGAN' | translate }}\n        </p>\n        <div class=\"slogan-line\"></div>\n\n      </div>\n    </div>\n  </div>\n</div>\n\n\n\n<div class=\"container\">\n    <div class=\"row\">\n      <div class=\"col-12\">\n        <p class=\"text-content two\">\n          {{ 'ABOUT_US.WAY_OF_WORKING' | translate }}\n          {{ 'ABOUT_US.WORK_METHODS' | translate }}\n        </p>\n      </div>\n    </div>\n  </div>\n\n\n\n\n<div class=\"background-image\" [style.background-image]=\" 'url(' + labelImageUrl + ')' \"></div>\n\n\n\n<div class=\"box-how-we-work\">\n  <div class=\"container\">\n    <div class=\"row\">\n      <div class=\"col-12\">\n        \n        <p class=\"slogan\">\n          {{ 'TITLES_BY_ROUTE.HOWWEWORK' | translate }}\n        </p>\n        <div class=\"slogan-line\"></div>\n        \n      </div>\n    </div>\n  </div>\n</div>\n\n\n\n\n\n<div class=\"box-ours-clients\">\n  <div class=\"container\">\n\n    <div class=\"row\">\n      <div class=\"col-12\">\n        <p class=\"text-content-decorate\" [innerHTML]=\" 'ABOUT_US.AT_PRODUCTION' | translate \"></p>\n        <br/>\n        <p class=\"text-content-decorate\">{{ 'HOME.OURS_CLIENTS' | translate }}:</p>\n      </div>  \n    </div>\n\n\n\n    <div class=\"row clients-logos-wrapper\">\n\n      <div class=\"col-6 col-md-5 col-lg-4 col-xl-3\">\n        <div class=\"our-client-logo\" [style.background-image]=\" 'url(' + wurthClientLogoUrl + ')' \"></div>    \n      </div>\n\n      <div class=\"col-3 col-md-3 col-lg-2 col-xl-1\">\n          <div class=\"our-client-logo\" [style.background-image]=\" 'url(' + ifemaClientLogoUrl + ')' \"></div>    \n        </div>\n\n      <div class=\"col-3 col-md-3 col-lg-2 col-xl-1\">\n        <div class=\"our-client-logo\" [style.background-image]=\" 'url(' + upsClientLogoUrl + ')' \"></div>    \n      </div>\n\n      <div class=\"col-6 col-md-5 col-lg-4 col-xl-3\">\n        <div class=\"our-client-logo\" [style.background-image]=\" 'url(' + lorealClientLogoUrl + ')' \"></div>    \n      </div>\n      \n      <div class=\"col-6 col-md-5 col-lg-4 col-xl-3\">\n        <div class=\"our-client-logo\" [style.background-image]=\" 'url(' + seurClientLogoUrl + ')' \"></div>    \n      </div>\n\n    </div>\n\n  </div>\n</div>\n\n\n\n\n\n\n<div class=\"box-contact-info last-box\">\n  <div class=\"container\">\n    <div class=\"row\">\n      <div class=\"col-12\">\n          <h1>{{ 'APPLICATION_COMMON.MAIL_CONNECTION' | translate }} <span>{{ mail }}</span></h1>\n      </div>\n    </div>\n  </div>\n</div>\n\n"
 
 /***/ }),
 
@@ -505,7 +560,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".font-title {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 2.8rem;\n  font-weight: 900; }\n\n.font-subtitle {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 2rem;\n  font-weight: 200; }\n\n.font-widget {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 1rem;\n  font-weight: 400; }\n\n.font-paragraph {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 0.95rem;\n  font-weight: 300; }\n\n.font-detail {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 0.75rem;\n  font-weight: 300; }\n\n.title-line, .slogan-line {\n  width: 8%;\n  border-top: 14px solid rgba(13, 135, 216, 0.35); }\n\n.light-shadow {\n  box-shadow: 0px 0px 5px 0px rgba(41, 47, 56, 0.75); }\n\n.text-content-decorate, p.text-content {\n  text-align: justify;\n  font-size: 0.95rem;\n  color: rgba(41, 47, 56, 0.6); }\n\n.company-features-wrapper {\n  border-top: 4px solid #0D87D8;\n  padding: 2rem 0.5rem;\n  background-color: #292F38; }\n  .company-features-wrapper .feature {\n    height: 15rem;\n    padding: 0 1rem;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: column;\n            flex-direction: column;\n    -webkit-box-pack: start;\n        -ms-flex-pack: start;\n            justify-content: flex-start;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    color: rgba(255, 255, 255, 0.65) !important; }\n    .company-features-wrapper .feature span {\n      text-align: center;\n      font-size: 1.8rem;\n      font-weight: bold; }\n    .company-features-wrapper .feature p {\n      margin-top: 0.5rem;\n      opacity: 0.75;\n      text-align: center;\n      font-size: 0.95rem;\n      margin-bottom: 0 !important; }\n    .company-features-wrapper .feature i {\n      font-size: 6.5rem;\n      color: rgba(255, 255, 255, 0.35); }\n\n.company-slogan-wrapper {\n  padding: 5rem 1rem;\n  background-color: #FFFFFF; }\n  .company-slogan-wrapper p {\n    text-align: center;\n    margin-bottom: 0 !important; }\n\np.slogan {\n  color: rgba(41, 47, 56, 0.85) !important;\n  text-align: left !important;\n  font-size: 2.8rem;\n  font-weight: 200; }\n\n.box-contact-info {\n  padding: 2rem 0;\n  color: rgba(41, 47, 56, 0.55) !important;\n  background-color: rgba(41, 47, 56, 0.2); }\n  .box-contact-info.last-box {\n    background-color: #d6dde9; }\n  .box-contact-info h1 {\n    text-align: center;\n    font-size: 1.3rem !important;\n    margin-bottom: none; }\n    .box-contact-info h1 span {\n      font-size: 1.3rem !important;\n      font-weight: bold; }\n\n.background-image {\n  width: 100%;\n  height: 40rem;\n  background-size: cover;\n  background-repeat: no-repeat;\n  background-position: center;\n  background-attachment: scroll; }\n\np.text-content {\n  margin-bottom: 0; }\n  p.text-content.one {\n    margin-top: 3rem; }\n  p.text-content.two {\n    margin-bottom: 3rem; }\n\n.box-how-we-work {\n  border-top: 4px solid #0D87D8;\n  padding: 3rem 0; }\n  .box-how-we-work h1 {\n    color: rgba(41, 47, 56, 0.85);\n    text-align: left;\n    font-size: 2.8rem; }\n    .box-how-we-work h1 i {\n      font-size: 3rem; }\n\n.clients-logos-wrapper {\n  width: 100%;\n  height: 15rem;\n  margin-bottom: 3rem;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between; }\n  .clients-logos-wrapper div.our-client-logo {\n    height: 100%;\n    width: 100%;\n    margin: 2rem 1rem !important;\n    background-size: contain;\n    background-repeat: no-repeat;\n    background-position: center;\n    opacity: 0.45; }\n\n.box-last-info {\n  width: 100%;\n  height: 15rem; }\n\n@media (max-width: 576px) {\n  p.slogan {\n    font-size: 1.8rem; } }\n", ""]);
+exports.push([module.i, ".font-title {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 2.8rem;\n  font-weight: 900; }\n\n.font-subtitle {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 2rem;\n  font-weight: 200; }\n\n.font-widget {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 1rem;\n  font-weight: 400; }\n\n.font-paragraph {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 0.95rem;\n  font-weight: 300; }\n\n.font-detail {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 0.75rem;\n  font-weight: 300; }\n\n.title-line, .slogan-line {\n  width: 8%;\n  border-top: 14px solid rgba(13, 135, 216, 0.35); }\n\n.light-shadow {\n  box-shadow: 0px 0px 5px 0px rgba(41, 47, 56, 0.75); }\n\n.text-content-decorate, p.text-content {\n  text-align: justify;\n  font-size: 0.95rem;\n  color: rgba(41, 47, 56, 0.6); }\n\n.company-features-wrapper {\n  border-top: 4px solid #0D87D8;\n  padding: 2rem 0.5rem;\n  background-color: #292F38; }\n  .company-features-wrapper .feature {\n    height: 15rem;\n    padding: 0 1rem;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: column;\n            flex-direction: column;\n    -webkit-box-pack: start;\n        -ms-flex-pack: start;\n            justify-content: flex-start;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    color: rgba(255, 255, 255, 0.65) !important; }\n    .company-features-wrapper .feature span {\n      text-align: center;\n      font-size: 1.8rem;\n      font-weight: bold; }\n    .company-features-wrapper .feature p {\n      margin-top: 0.5rem;\n      opacity: 0.75;\n      text-align: center;\n      font-size: 0.95rem;\n      margin-bottom: 0 !important; }\n    .company-features-wrapper .feature i {\n      font-size: 6.5rem;\n      color: rgba(255, 255, 255, 0.35); }\n\n.company-slogan-wrapper {\n  padding: 5rem 1rem;\n  background-color: #FFFFFF; }\n  .company-slogan-wrapper p {\n    text-align: center;\n    margin-bottom: 0 !important; }\n\np.slogan {\n  color: rgba(41, 47, 56, 0.85) !important;\n  text-align: left !important;\n  font-size: 2.8rem;\n  font-weight: 200; }\n\n.box-contact-info {\n  padding: 2rem 0;\n  color: rgba(41, 47, 56, 0.55) !important;\n  background-color: rgba(41, 47, 56, 0.2); }\n  .box-contact-info.last-box {\n    background-color: #d6dde9; }\n  .box-contact-info h1 {\n    text-align: center;\n    font-size: 1.3rem !important;\n    margin-bottom: none; }\n    .box-contact-info h1 span {\n      font-size: 1.3rem !important;\n      font-weight: bold; }\n\n.background-image {\n  width: 100%;\n  height: 40rem;\n  background-size: cover;\n  background-repeat: no-repeat;\n  background-position: center;\n  background-attachment: scroll; }\n\np.text-content {\n  margin-bottom: 0; }\n  p.text-content.one {\n    margin-top: 3rem; }\n  p.text-content.two {\n    margin-bottom: 3rem; }\n\n.box-how-we-work {\n  border-top: 4px solid #0D87D8;\n  padding: 3rem 0; }\n  .box-how-we-work h1 {\n    color: rgba(41, 47, 56, 0.85);\n    text-align: left;\n    font-size: 2.8rem; }\n    .box-how-we-work h1 i {\n      font-size: 3rem; }\n\n.clients-logos-wrapper {\n  width: 100%;\n  height: 15rem;\n  margin-bottom: 3rem;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between; }\n  .clients-logos-wrapper div.our-client-logo {\n    height: 100%;\n    width: 100%;\n    margin: 2rem 1rem !important;\n    background-size: contain;\n    background-repeat: no-repeat;\n    background-position: center;\n    opacity: 0.45; }\n\n.box-last-info {\n  width: 100%;\n  height: 15rem; }\n\n@media (max-width: 992px) and (min-width: 768px) {\n  .company-features-wrapper .feature {\n    height: 20rem; } }\n\n@media (max-width: 576px) {\n  p.slogan {\n    font-size: 1.8rem; } }\n", ""]);
 
 // exports
 
@@ -642,7 +697,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".font-title {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 2.8rem;\n  font-weight: 900; }\n\n.font-subtitle {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 2rem;\n  font-weight: 200; }\n\n.font-widget {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 1rem;\n  font-weight: 400; }\n\n.font-paragraph {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 0.95rem;\n  font-weight: 300; }\n\n.font-detail {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 0.75rem;\n  font-weight: 300; }\n\n.title-line {\n  width: 8%;\n  border-top: 14px solid rgba(13, 135, 216, 0.35); }\n\n.light-shadow {\n  box-shadow: 0px 0px 5px 0px rgba(41, 47, 56, 0.75); }\n\n.logotype {\n  max-width: 14rem;\n  max-height: 2.8rem;\n  height: 100%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center; }\n  .logotype:hover {\n    cursor: pointer; }\n  .logotype .img-logotype {\n    width: 14rem;\n    height: 2.8rem;\n    background-position: center;\n    background-attachment: unset;\n    background-repeat: no-repeat;\n    background-size: cover; }\n\n/*\nMedia query for dimension less of 450px of width */\n", ""]);
+exports.push([module.i, ".font-title {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 2.8rem;\n  font-weight: 900; }\n\n.font-subtitle {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 2rem;\n  font-weight: 200; }\n\n.font-widget {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 1rem;\n  font-weight: 400; }\n\n.font-paragraph {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 0.95rem;\n  font-weight: 300; }\n\n.font-detail {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 0.75rem;\n  font-weight: 300; }\n\n.title-line {\n  width: 8%;\n  border-top: 14px solid rgba(13, 135, 216, 0.35); }\n\n.light-shadow {\n  box-shadow: 0px 0px 5px 0px rgba(41, 47, 56, 0.75); }\n\n.logotype {\n  max-width: 14rem;\n  max-height: 2.8rem;\n  height: 100%;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center; }\n  .logotype:hover {\n    cursor: pointer; }\n  .logotype .img-logotype {\n    width: 14rem;\n    height: 2.8rem;\n    background-position: center;\n    background-attachment: unset;\n    background-repeat: no-repeat;\n    background-size: cover; }\n\n@media (max-width: 576px) {\n  .logotype {\n    width: 10.5rem;\n    height: 2.5rem; } }\n", ""]);
 
 // exports
 
@@ -709,6 +764,102 @@ LogotypeComponent = __decorate([
 
 var _a, _b;
 //# sourceMappingURL=logotype.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/sidebar-menu/sidebar-menu.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"sidebar-menu-wrapper\">\n    <span [class.activated]=\" isActivated(1) \" class=\"item\" (click)=\" navigationTo(1) \">{{ 'NAVIGATION_ROUTE.HOME' | translate }}</span>\n    <span [class.activated]=\" isActivated(2) \" class=\"item\" (click)=\" navigationTo(2)\">{{ 'NAVIGATION_ROUTE.ABOUT_US' | translate }}</span>\n    <span [class.activated]=\" isActivated(3) \" class=\"item\" (click)=\" navigationTo(3)\">{{ 'NAVIGATION_ROUTE.LOCATION' | translate }}</span>\n    <span [class.activated]=\" isActivated(4) \" class=\"item\" (click)=\" navigationTo(4)\">{{ 'NAVIGATION_ROUTE.CONTACT' | translate }}</span>\n  </div>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/sidebar-menu/sidebar-menu.component.scss":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".sidebar-menu-wrapper {\n  padding: 1rem;\n  padding-top: 3rem;\n  height: 100vh;\n  background-color: #E3E8F0;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  -webkit-box-pack: start;\n      -ms-flex-pack: start;\n          justify-content: flex-start; }\n  .sidebar-menu-wrapper .item {\n    padding: 0.5rem;\n    font-size: 1rem; }\n    .sidebar-menu-wrapper .item.activated {\n      font-weight: 900;\n      color: #0D87D8; }\n    .sidebar-menu-wrapper .item:hover {\n      cursor: pointer; }\n", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/components/sidebar-menu/sidebar-menu.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SidebarMenuComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__commons__ = __webpack_require__("../../../../../src/app/commons/index.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__mundilabel_routing__ = __webpack_require__("../../../../../src/app/mundilabel.routing.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+var SidebarMenuComponent = (function () {
+    function SidebarMenuComponent(router, changeDetection, mundilabelService) {
+        this.router = router;
+        this.changeDetection = changeDetection;
+        this.mundilabelService = mundilabelService;
+    } // Constructor
+    SidebarMenuComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.router.events.subscribe(function (data) {
+            if (data && data.url) {
+                _this.currentUrl = _this.mundilabelService.whenChangeActivedRoute(data);
+                _this.changeDetection.markForCheck();
+            } // If
+        }); // Subscribe
+    }; // NgOnInit
+    /**
+     * @method
+     * @public
+     * @param index
+     * @description
+     */
+    SidebarMenuComponent.prototype.isActivated = function (index) {
+        return (this.currentUrl === __WEBPACK_IMPORTED_MODULE_3__mundilabel_routing__["a" /* MundilabelRoutes */][index].path);
+    }; // IsActivated
+    /**
+     * @method
+     * @public
+     * @param indexRoute
+     * @description
+     */
+    SidebarMenuComponent.prototype.navigationTo = function (indexRoute) {
+        this.mundilabelService.navigationTo(indexRoute);
+    }; // NavigationTo
+    return SidebarMenuComponent;
+}()); // SidebarMenuComponent
+SidebarMenuComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
+        selector: 'sidebar-menu',
+        template: __webpack_require__("../../../../../src/app/components/sidebar-menu/sidebar-menu.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/components/sidebar-menu/sidebar-menu.component.scss")]
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["l" /* ChangeDetectorRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["l" /* ChangeDetectorRef */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__commons__["a" /* MundilabelService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__commons__["a" /* MundilabelService */]) === "function" && _c || Object])
+], SidebarMenuComponent);
+
+var _a, _b, _c;
+//# sourceMappingURL=sidebar-menu.component.js.map
 
 /***/ }),
 
@@ -789,7 +940,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".font-title, .wallpaper-container .flex-wrapper .wallpaper-titles h1 {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 2.8rem;\n  font-weight: 900; }\n\n.font-subtitle {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 2rem;\n  font-weight: 200; }\n\n.font-widget {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 1rem;\n  font-weight: 400; }\n\n.font-paragraph {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 0.95rem;\n  font-weight: 300; }\n\n.font-detail {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 0.75rem;\n  font-weight: 300; }\n\n.title-line {\n  width: 8%;\n  border-top: 14px solid rgba(13, 135, 216, 0.35); }\n\n.light-shadow {\n  box-shadow: 0px 0px 5px 0px rgba(41, 47, 56, 0.75); }\n\n.wallpaper-container {\n  position: relative;\n  width: 100%;\n  height: 60vh;\n  background-position: top;\n  background-attachment: unset;\n  background-repeat: no-repeat;\n  background-size: cover;\n  z-index: -1; }\n  .wallpaper-container .flex-wrapper {\n    height: 100%;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: center;\n        -ms-flex-pack: center;\n            justify-content: center;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center; }\n    .wallpaper-container .flex-wrapper .wallpaper-titles {\n      margin: 3rem; }\n      .wallpaper-container .flex-wrapper .wallpaper-titles h1 {\n        font-size: 6.5rem !important;\n        color: #FFFFFF;\n        text-align: center; }\n\n@media (min-width: 1200px) {\n  .wallpaper-container {\n    height: 100vh !important; } }\n\n@media (min-width: 768px) and (max-width: 1200px) {\n  .wallpaper-container {\n    height: 60vh !important; }\n    .wallpaper-container .wallpaper-titles {\n      margin: 2rem; }\n      .wallpaper-container .wallpaper-titles h1 {\n        font-size: 3.5rem !important; } }\n\n@media (max-width: 576px) {\n  .wallpaper-container {\n    height: 40vh !important;\n    margin-top: 3.5rem !important; }\n    .wallpaper-container .flex-wrapper .wallpaper-titles {\n      display: none; } }\n", ""]);
+exports.push([module.i, ".font-title, .wallpaper-container .flex-wrapper .wallpaper-titles h1 {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 2.8rem;\n  font-weight: 900; }\n\n.font-subtitle {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 2rem;\n  font-weight: 200; }\n\n.font-widget {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 1rem;\n  font-weight: 400; }\n\n.font-paragraph {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 0.95rem;\n  font-weight: 300; }\n\n.font-detail {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 0.75rem;\n  font-weight: 300; }\n\n.title-line {\n  width: 8%;\n  border-top: 14px solid rgba(13, 135, 216, 0.35); }\n\n.light-shadow {\n  box-shadow: 0px 0px 5px 0px rgba(41, 47, 56, 0.75); }\n\n.wallpaper-container {\n  position: relative;\n  width: 100%;\n  height: 60vh;\n  background-position: top;\n  background-attachment: unset;\n  background-repeat: no-repeat;\n  background-size: cover;\n  z-index: -1; }\n  .wallpaper-container .flex-wrapper {\n    height: 100%;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: center;\n        -ms-flex-pack: center;\n            justify-content: center;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center; }\n    .wallpaper-container .flex-wrapper .wallpaper-titles {\n      margin: 3rem; }\n      .wallpaper-container .flex-wrapper .wallpaper-titles h1 {\n        font-size: 6.5rem !important;\n        color: #FFFFFF;\n        text-align: center; }\n\n@media (min-width: 1200px) {\n  .wallpaper-container {\n    height: 100vh !important; } }\n\n@media (max-width: 1200px) {\n  .wallpaper-container .flex-wrapper .wallpaper-titles h1 {\n    font-size: 5rem !important; } }\n\n@media (max-width: 992px) {\n  .wallpaper-container {\n    height: 60vh !important; }\n    .wallpaper-container .flex-wrapper .wallpaper-titles {\n      margin: 2rem; }\n      .wallpaper-container .flex-wrapper .wallpaper-titles h1 {\n        font-size: 4rem !important; } }\n\n@media (max-width: 576px) {\n  .wallpaper-container {\n    height: 40vh !important;\n    margin-top: 1.5rem !important; }\n    .wallpaper-container .flex-wrapper .wallpaper-titles {\n      margin: 0.5rem; }\n      .wallpaper-container .flex-wrapper .wallpaper-titles h1 {\n        font-size: 2.5rem !important; } }\n", ""]);
 
 // exports
 
@@ -945,7 +1096,7 @@ var WallpaperComponent_1, _a, _b, _c, _d;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__raw_dropdown_raw_dropdown_trigger_directive__ = __webpack_require__("../../../../../src/app/modules/ngx-rawmaterial/components/raw-dropdown/raw-dropdown-trigger.directive.ts");
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_1__raw_dropdown_raw_dropdown_trigger_directive__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__raw_sidebar_raw_sidebar_component__ = __webpack_require__("../../../../../src/app/modules/ngx-rawmaterial/components/raw-sidebar/raw-sidebar.component.ts");
-/* unused harmony namespace reexport */
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_2__raw_sidebar_raw_sidebar_component__["a"]; });
 
 
 
@@ -1536,7 +1687,7 @@ var _a, _b, _c, _d;
 /***/ "../../../../../src/app/modules/ngx-rawmaterial/components/raw-sidebar/raw-sidebar.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"sidebar-menu-wrapper\">\n\n</div>\n\n<div class=\"sidebar-content-wrapper\">\n  <ng-content></ng-content>\n</div>\n"
+module.exports = "\n\n<ng-container *ngIf=\" !isClosed \">\n  <div class=\"raw-sidebar\" [class.open]=\" isOpen \" [class.close]=\" !isOpen \" raw-stopscroll >\n    <div class=\"sidebar-content-wrapper\">\n      <ng-content></ng-content>\n    </div>\n  </div>\n</ng-container>\n\n\n"
 
 /***/ }),
 
@@ -1548,7 +1699,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ":host {\n  position: fixed;\n  width: 38%;\n  height: 100vh;\n  padding: 1rem;\n  top: 0;\n  left: 0;\n  background-color: #292F38;\n  z-index: 1500;\n  box-shadow: 5px 0px 5px -4px rgba(0, 0, 0, 0.75); }\n\n@media (max-width: 576px) {\n  :host {\n    width: 80% !important; } }\n", ""]);
+exports.push([module.i, ".raw-sidebar {\n  position: fixed;\n  height: 100vh;\n  top: 0;\n  background-color: #fff;\n  z-index: 1500;\n  box-shadow: 5px 0px 5px -4px rgba(0, 0, 0, 0.75); }\n  .raw-sidebar.open {\n    width: 38%;\n    left: 0; }\n  .raw-sidebar.close {\n    left: -120%; }\n\n@media (max-width: 576px) {\n  .raw-sidebar {\n    width: 80% !important; } }\n", ""]);
 
 // exports
 
@@ -1564,6 +1715,7 @@ module.exports = module.exports.toString();
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RawSidebarComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__raw_sidebar_handler__ = __webpack_require__("../../../../../src/app/modules/ngx-rawmaterial/components/raw-sidebar/raw-sidebar.handler.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1574,23 +1726,250 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
 var RawSidebarComponent = (function () {
-    function RawSidebarComponent() {
-    }
+    /**
+     * @method
+     * @constructor
+     */
+    function RawSidebarComponent(sidebarHandler, changeDetection) {
+        this.sidebarHandler = sidebarHandler;
+        this.changeDetection = changeDetection;
+        this._isClosed = false;
+    } // Constructor
     RawSidebarComponent.prototype.ngOnInit = function () {
+        this.inicialize();
     }; // NgOnInit
+    RawSidebarComponent.prototype.ngOnChanges = function (changes) {
+        if (changes.actived && !changes.actived.isFirstChange()) {
+            this.sidebarHandler.toggleSidebar();
+        } // If
+    }; // OnChanges
+    /**
+     * @method
+     * @private
+     * @description
+     */
+    RawSidebarComponent.prototype.inicialize = function () {
+        var _this = this;
+        this.sidebarHandler.isOpen$.subscribe(function (state) {
+            _this.whenSidebarStateChange(state);
+        }); // Subscribe
+    }; // Inicialize
+    /**
+     * @method
+     * @private
+     * @param isOpen
+     */
+    RawSidebarComponent.prototype.whenSidebarStateChange = function (state) {
+        this._isOpen = state;
+        this.changeDetection.markForCheck();
+    }; // WhenSidebarStateChange
+    Object.defineProperty(RawSidebarComponent.prototype, "isOpen", {
+        get: function () {
+            return this._isOpen;
+        } // IsOpen
+        ,
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(RawSidebarComponent.prototype, "isClosed", {
+        get: function () {
+            return this._isClosed;
+        } // IsClosed
+        ,
+        enumerable: true,
+        configurable: true
+    });
     return RawSidebarComponent;
 }()); // RawSidebarComponent
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])(),
+    __metadata("design:type", Boolean)
+], RawSidebarComponent.prototype, "actived", void 0);
 RawSidebarComponent = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
         selector: 'raw-sidebar',
         template: __webpack_require__("../../../../../src/app/modules/ngx-rawmaterial/components/raw-sidebar/raw-sidebar.component.html"),
-        styles: [__webpack_require__("../../../../../src/app/modules/ngx-rawmaterial/components/raw-sidebar/raw-sidebar.component.scss")]
+        styles: [__webpack_require__("../../../../../src/app/modules/ngx-rawmaterial/components/raw-sidebar/raw-sidebar.component.scss")],
+        changeDetection: __WEBPACK_IMPORTED_MODULE_0__angular_core__["k" /* ChangeDetectionStrategy */].OnPush,
+        providers: [__WEBPACK_IMPORTED_MODULE_1__raw_sidebar_handler__["a" /* RawSidebarHandlerService */]]
     }),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__raw_sidebar_handler__["a" /* RawSidebarHandlerService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__raw_sidebar_handler__["a" /* RawSidebarHandlerService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["l" /* ChangeDetectorRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["l" /* ChangeDetectorRef */]) === "function" && _b || Object])
 ], RawSidebarComponent);
 
+var _a, _b;
 //# sourceMappingURL=raw-sidebar.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/modules/ngx-rawmaterial/components/raw-sidebar/raw-sidebar.handler.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RawSidebarHandlerService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs__ = __webpack_require__("../../../../rxjs/Rx.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs__);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var RawSidebarHandlerService = (function () {
+    function RawSidebarHandlerService() {
+        this.DEFAULT_INIT_SIDEBAR_STATE = false;
+        this.isOpen = new __WEBPACK_IMPORTED_MODULE_1_rxjs__["BehaviorSubject"](this.DEFAULT_INIT_SIDEBAR_STATE);
+        this.isOpen$ = this.isOpen.asObservable();
+    } // Constructor
+    /**
+     * @method
+     * @public
+     * @description
+     */
+    RawSidebarHandlerService.prototype.toggleSidebar = function () {
+        this.isOpen.next(!this.isOpen.getValue());
+    }; // ToggleSidebar
+    return RawSidebarHandlerService;
+}()); // RawSidebarHandlerService
+RawSidebarHandlerService = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Injectable */])(),
+    __metadata("design:paramtypes", [])
+], RawSidebarHandlerService);
+
+//# sourceMappingURL=raw-sidebar.handler.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/modules/ngx-rawmaterial/directives/index.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__stopScroll_directive__ = __webpack_require__("../../../../../src/app/modules/ngx-rawmaterial/directives/stopScroll.directive.ts");
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__stopScroll_directive__["a"]; });
+
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/modules/ngx-rawmaterial/directives/stopScroll.directive.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RawStopScrollDirective; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__("../../../platform-browser/@angular/platform-browser.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __param = (this && this.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
+
+
+var RawStopScrollDirective = (function () {
+    function RawStopScrollDirective(document) {
+        this.document = document;
+        // left: 37, up: 38, right: 39, down: 40,
+        // spacebar: 32, pageup: 33, pagedown: 34, end: 35, home: 36
+        this.keys = { 37: 1, 38: 1, 39: 1, 40: 1 };
+    }
+    RawStopScrollDirective.prototype.mouseOver = function () {
+        this.disableScroll();
+    }; // MouseOver
+    RawStopScrollDirective.prototype.mouseOut = function () {
+        this.enableScroll();
+    }; // MouseOut
+    /**
+     * @method
+     * @private
+     * @param event
+     */
+    RawStopScrollDirective.prototype.preventDefault = function (event) {
+        var e = event || window.event;
+        if (e.preventDefault) {
+            e.preventDefault();
+        } // If
+        e.returnValue = false;
+    }; // PreventDefault
+    /**
+     * @method
+     * @private
+     * @param event
+     */
+    RawStopScrollDirective.prototype.preventDefaultForScrollKeys = function (event) {
+        if (this.keys[event.keyCode]) {
+            this.preventDefault(event);
+            return false;
+        } // If
+    }; // PreventDefaultForScrollKeys
+    /**
+     * @method
+     * @private
+     */
+    RawStopScrollDirective.prototype.disableScroll = function () {
+        if (!window) {
+            return 0;
+        } // If
+        if (window.addEventListener) {
+            window.addEventListener('DOMMouseScroll', this.preventDefault, false);
+        } // If
+        window.onwheel = this.preventDefault; // modern standard
+        window.onmousewheel = this.document.onmousewheel = this.preventDefault; // older browsers, IE
+        window.ontouchmove = this.preventDefault; // mobile
+        this.document.onkeydown = this.preventDefaultForScrollKeys;
+    }; // DisableScroll
+    /**
+     * @method
+     * @private
+     */
+    RawStopScrollDirective.prototype.enableScroll = function () {
+        if (!window) {
+            return 0;
+        } // If
+        if (window.removeEventListener) {
+            window.removeEventListener('DOMMouseScroll', this.preventDefault, false);
+        } // If
+        window.onmousewheel = this.document.onmousewheel = null;
+        window.onwheel = null;
+        window.ontouchmove = null;
+        this.document.onkeydown = null;
+    }; // EnableScroll
+    return RawStopScrollDirective;
+}()); // RawStopScrollDirective
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* HostListener */])('mouseover', []),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", void 0)
+], RawStopScrollDirective.prototype, "mouseOver", null);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* HostListener */])('mouseout', []),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", void 0)
+], RawStopScrollDirective.prototype, "mouseOut", null);
+RawStopScrollDirective = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* Directive */])({
+        selector: '[raw-stopscroll]'
+    }),
+    __param(0, Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Inject */])(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["b" /* DOCUMENT */])),
+    __metadata("design:paramtypes", [Object])
+], RawStopScrollDirective);
+
+//# sourceMappingURL=stopScroll.directive.js.map
 
 /***/ }),
 
@@ -1600,13 +1979,21 @@ RawSidebarComponent = __decorate([
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RawMaterialModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components__ = __webpack_require__("../../../../../src/app/modules/ngx-rawmaterial/components/index.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__("../../../common/@angular/common.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__ = __webpack_require__("../../../platform-browser/@angular/platform-browser.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_platform_browser_animations__ = __webpack_require__("../../../platform-browser/@angular/platform-browser/animations.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components__ = __webpack_require__("../../../../../src/app/modules/ngx-rawmaterial/components/index.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__directives__ = __webpack_require__("../../../../../src/app/modules/ngx-rawmaterial/directives/index.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
+
+
 
 
 var RawMaterialModule = (function () {
@@ -1616,13 +2003,22 @@ var RawMaterialModule = (function () {
 }()); // RawMaterialModule
 RawMaterialModule = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["M" /* NgModule */])({
+        imports: [
+            __WEBPACK_IMPORTED_MODULE_1__angular_common__["b" /* CommonModule */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__["a" /* BrowserModule */],
+            __WEBPACK_IMPORTED_MODULE_3__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */]
+        ],
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_1__components__["a" /* RawDropdownComponent */],
-            __WEBPACK_IMPORTED_MODULE_1__components__["b" /* RawDropdownTriggerDirective */]
+            __WEBPACK_IMPORTED_MODULE_4__components__["a" /* RawDropdownComponent */],
+            __WEBPACK_IMPORTED_MODULE_4__components__["b" /* RawDropdownTriggerDirective */],
+            __WEBPACK_IMPORTED_MODULE_4__components__["c" /* RawSidebarComponent */],
+            __WEBPACK_IMPORTED_MODULE_5__directives__["a" /* RawStopScrollDirective */]
         ],
         exports: [
-            __WEBPACK_IMPORTED_MODULE_1__components__["a" /* RawDropdownComponent */],
-            __WEBPACK_IMPORTED_MODULE_1__components__["b" /* RawDropdownTriggerDirective */]
+            __WEBPACK_IMPORTED_MODULE_4__components__["a" /* RawDropdownComponent */],
+            __WEBPACK_IMPORTED_MODULE_4__components__["b" /* RawDropdownTriggerDirective */],
+            __WEBPACK_IMPORTED_MODULE_4__components__["c" /* RawSidebarComponent */],
+            __WEBPACK_IMPORTED_MODULE_5__directives__["a" /* RawStopScrollDirective */]
         ],
         providers: [],
     })
@@ -1635,7 +2031,7 @@ RawMaterialModule = __decorate([
 /***/ "../../../../../src/app/mundilabel.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<wallpaper></wallpaper>\n<header></header>\n<router-outlet></router-outlet><!--The content below is only a placeholder and can be replaced.-->\n<footer></footer>\n\n\n"
+module.exports = "<wallpaper></wallpaper>\n<header></header>\n\n<raw-sidebar [actived]=\" mundilabelService.activatedSidebar$ | async \">\n  <sidebar-menu></sidebar-menu>\n</raw-sidebar>\n\n<router-outlet></router-outlet><!--The content below is only a placeholder and can be replaced.-->\n<footer></footer>\n\n\n"
 
 /***/ }),
 
@@ -1664,6 +2060,7 @@ module.exports = module.exports.toString();
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MundilabelComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ng2_translate__ = __webpack_require__("../../../../ng2-translate/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__commons__ = __webpack_require__("../../../../../src/app/commons/index.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1675,13 +2072,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
 var MundilabelComponent = (function () {
     /**
      * @method
      * @constructor
      * @param translate
      */
-    function MundilabelComponent(translate) {
+    function MundilabelComponent(translate, mundilabelService) {
+        this.translate = translate;
+        this.mundilabelService = mundilabelService;
         // Configure translate module to idiomatization of app
         translate.setDefaultLang('es');
         translate.use('es');
@@ -1694,10 +2094,10 @@ MundilabelComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/mundilabel.component.html"),
         styles: [__webpack_require__("../../../../../src/app/mundilabel.component.scss")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ng2_translate__["c" /* TranslateService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ng2_translate__["c" /* TranslateService */]) === "function" && _a || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ng2_translate__["c" /* TranslateService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ng2_translate__["c" /* TranslateService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__commons__["a" /* MundilabelService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__commons__["a" /* MundilabelService */]) === "function" && _b || Object])
 ], MundilabelComponent);
 
-var _a;
+var _a, _b;
 //# sourceMappingURL=mundilabel.component.js.map
 
 /***/ }),
@@ -1709,31 +2109,33 @@ var _a;
 /* unused harmony export translateLoader */
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MundilabelModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__("../../../platform-browser/@angular/platform-browser.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ng2_translate__ = __webpack_require__("../../../../ng2-translate/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__modules_ngx_rawmaterial_rawmaterial_modules__ = __webpack_require__("../../../../../src/app/modules/ngx-rawmaterial/rawmaterial.modules.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__mundilabel_routing__ = __webpack_require__("../../../../../src/app/mundilabel.routing.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__mundilabel_component__ = __webpack_require__("../../../../../src/app/mundilabel.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_unknow_page_unknow_page_component__ = __webpack_require__("../../../../../src/app/components/unknow-page/unknow-page.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_home_home_component__ = __webpack_require__("../../../../../src/app/components/home/home.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_about_us_about_us_component__ = __webpack_require__("../../../../../src/app/components/about-us/about-us.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_contact_contact_component__ = __webpack_require__("../../../../../src/app/components/contact/contact.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_footer_footer_component__ = __webpack_require__("../../../../../src/app/components/footer/footer.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_header_header_component__ = __webpack_require__("../../../../../src/app/components/header/header.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__components_header_components_navigator_navigator_component__ = __webpack_require__("../../../../../src/app/components/header/components/navigator/navigator.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__components_logotype_logotype_component__ = __webpack_require__("../../../../../src/app/components/logotype/logotype.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__components_wallpaper_wallpaper_component__ = __webpack_require__("../../../../../src/app/components/wallpaper/wallpaper.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__commons_mundilabel_settings__ = __webpack_require__("../../../../../src/app/commons/mundilabel.settings.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__commons_mundilabel_service__ = __webpack_require__("../../../../../src/app/commons/mundilabel.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__components_location_location_component__ = __webpack_require__("../../../../../src/app/components/location/location.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__modules_ngx_rawmaterial_components_raw_sidebar_raw_sidebar_component__ = __webpack_require__("../../../../../src/app/modules/ngx-rawmaterial/components/raw-sidebar/raw-sidebar.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__("../../../common/@angular/common.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ng2_translate__ = __webpack_require__("../../../../ng2-translate/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__modules_ngx_rawmaterial_rawmaterial_modules__ = __webpack_require__("../../../../../src/app/modules/ngx-rawmaterial/rawmaterial.modules.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__mundilabel_routing__ = __webpack_require__("../../../../../src/app/mundilabel.routing.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__mundilabel_component__ = __webpack_require__("../../../../../src/app/mundilabel.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_unknow_page_unknow_page_component__ = __webpack_require__("../../../../../src/app/components/unknow-page/unknow-page.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_home_home_component__ = __webpack_require__("../../../../../src/app/components/home/home.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_about_us_about_us_component__ = __webpack_require__("../../../../../src/app/components/about-us/about-us.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_contact_contact_component__ = __webpack_require__("../../../../../src/app/components/contact/contact.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_footer_footer_component__ = __webpack_require__("../../../../../src/app/components/footer/footer.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__components_header_header_component__ = __webpack_require__("../../../../../src/app/components/header/header.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__components_header_components_navigator_navigator_component__ = __webpack_require__("../../../../../src/app/components/header/components/navigator/navigator.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__components_logotype_logotype_component__ = __webpack_require__("../../../../../src/app/components/logotype/logotype.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__components_wallpaper_wallpaper_component__ = __webpack_require__("../../../../../src/app/components/wallpaper/wallpaper.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__commons_mundilabel_settings__ = __webpack_require__("../../../../../src/app/commons/mundilabel.settings.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__commons_mundilabel_service__ = __webpack_require__("../../../../../src/app/commons/mundilabel.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__components_location_location_component__ = __webpack_require__("../../../../../src/app/components/location/location.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__components_sidebar_menu_sidebar_menu_component__ = __webpack_require__("../../../../../src/app/components/sidebar-menu/sidebar-menu.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -1755,7 +2157,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 function translateLoader(http) {
-    return new __WEBPACK_IMPORTED_MODULE_3_ng2_translate__["d" /* TranslateStaticLoader */](http, 'assets/i18n', '.json');
+    return new __WEBPACK_IMPORTED_MODULE_4_ng2_translate__["d" /* TranslateStaticLoader */](http, 'assets/i18n', '.json');
 } // TranslateLoader
 var MundilabelModule = (function () {
     function MundilabelModule() {
@@ -1763,38 +2165,39 @@ var MundilabelModule = (function () {
     return MundilabelModule;
 }()); // MundilabelModule
 MundilabelModule = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["M" /* NgModule */])({
+    Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["M" /* NgModule */])({
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_6__mundilabel_component__["a" /* MundilabelComponent */],
-            __WEBPACK_IMPORTED_MODULE_7__components_unknow_page_unknow_page_component__["a" /* UnknowPageComponent */],
-            __WEBPACK_IMPORTED_MODULE_8__components_home_home_component__["a" /* HomeComponent */],
-            __WEBPACK_IMPORTED_MODULE_9__components_about_us_about_us_component__["a" /* AboutUsComponent */],
-            __WEBPACK_IMPORTED_MODULE_10__components_contact_contact_component__["a" /* ContactComponent */],
-            __WEBPACK_IMPORTED_MODULE_11__components_footer_footer_component__["a" /* FooterComponent */],
-            __WEBPACK_IMPORTED_MODULE_12__components_header_header_component__["a" /* HeaderComponent */],
-            __WEBPACK_IMPORTED_MODULE_13__components_header_components_navigator_navigator_component__["a" /* NavigatorComponent */],
-            __WEBPACK_IMPORTED_MODULE_14__components_logotype_logotype_component__["a" /* LogotypeComponent */],
-            __WEBPACK_IMPORTED_MODULE_15__components_wallpaper_wallpaper_component__["a" /* WallpaperComponent */],
-            __WEBPACK_IMPORTED_MODULE_18__components_location_location_component__["a" /* LocationComponent */],
-            __WEBPACK_IMPORTED_MODULE_19__modules_ngx_rawmaterial_components_raw_sidebar_raw_sidebar_component__["a" /* RawSidebarComponent */]
+            __WEBPACK_IMPORTED_MODULE_7__mundilabel_component__["a" /* MundilabelComponent */],
+            __WEBPACK_IMPORTED_MODULE_8__components_unknow_page_unknow_page_component__["a" /* UnknowPageComponent */],
+            __WEBPACK_IMPORTED_MODULE_9__components_home_home_component__["a" /* HomeComponent */],
+            __WEBPACK_IMPORTED_MODULE_10__components_about_us_about_us_component__["a" /* AboutUsComponent */],
+            __WEBPACK_IMPORTED_MODULE_11__components_contact_contact_component__["a" /* ContactComponent */],
+            __WEBPACK_IMPORTED_MODULE_12__components_footer_footer_component__["a" /* FooterComponent */],
+            __WEBPACK_IMPORTED_MODULE_13__components_header_header_component__["a" /* HeaderComponent */],
+            __WEBPACK_IMPORTED_MODULE_14__components_header_components_navigator_navigator_component__["a" /* NavigatorComponent */],
+            __WEBPACK_IMPORTED_MODULE_15__components_logotype_logotype_component__["a" /* LogotypeComponent */],
+            __WEBPACK_IMPORTED_MODULE_16__components_wallpaper_wallpaper_component__["a" /* WallpaperComponent */],
+            __WEBPACK_IMPORTED_MODULE_19__components_location_location_component__["a" /* LocationComponent */],
+            __WEBPACK_IMPORTED_MODULE_20__components_sidebar_menu_sidebar_menu_component__["a" /* SidebarMenuComponent */]
         ],
         imports: [
+            __WEBPACK_IMPORTED_MODULE_1__angular_common__["b" /* CommonModule */],
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
-            __WEBPACK_IMPORTED_MODULE_5__mundilabel_routing__["b" /* MundilabelRouting */],
-            __WEBPACK_IMPORTED_MODULE_4__modules_ngx_rawmaterial_rawmaterial_modules__["a" /* RawMaterialModule */],
-            __WEBPACK_IMPORTED_MODULE_3_ng2_translate__["b" /* TranslateModule */].forRoot()
+            __WEBPACK_IMPORTED_MODULE_6__mundilabel_routing__["b" /* MundilabelRouting */],
+            __WEBPACK_IMPORTED_MODULE_5__modules_ngx_rawmaterial_rawmaterial_modules__["a" /* RawMaterialModule */],
+            __WEBPACK_IMPORTED_MODULE_4_ng2_translate__["b" /* TranslateModule */].forRoot()
         ],
         providers: [
-            __WEBPACK_IMPORTED_MODULE_17__commons_mundilabel_service__["a" /* MundilabelService */],
-            __WEBPACK_IMPORTED_MODULE_16__commons_mundilabel_settings__["a" /* MundilabelSettingsService */],
-            __WEBPACK_IMPORTED_MODULE_3_ng2_translate__["c" /* TranslateService */],
+            __WEBPACK_IMPORTED_MODULE_18__commons_mundilabel_service__["a" /* MundilabelService */],
+            __WEBPACK_IMPORTED_MODULE_17__commons_mundilabel_settings__["a" /* MundilabelSettingsService */],
+            __WEBPACK_IMPORTED_MODULE_4_ng2_translate__["c" /* TranslateService */],
             {
-                provide: __WEBPACK_IMPORTED_MODULE_3_ng2_translate__["a" /* TranslateLoader */],
+                provide: __WEBPACK_IMPORTED_MODULE_4_ng2_translate__["a" /* TranslateLoader */],
                 useFactory: translateLoader,
-                deps: [__WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Http */]]
+                deps: [__WEBPACK_IMPORTED_MODULE_3__angular_http__["a" /* Http */]]
             }
         ],
-        bootstrap: [__WEBPACK_IMPORTED_MODULE_6__mundilabel_component__["a" /* MundilabelComponent */]]
+        bootstrap: [__WEBPACK_IMPORTED_MODULE_7__mundilabel_component__["a" /* MundilabelComponent */]]
     })
 ], MundilabelModule);
 
