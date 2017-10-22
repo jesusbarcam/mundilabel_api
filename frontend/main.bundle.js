@@ -144,6 +144,8 @@ var MundilabelSettingsService = (function () {
         this.FAX_COMPANY = '91 656 17 44';
         this.TOWN_COMPANY = 'San Fernando de Henares';
         this.PROVINCE_COMPANY = 'Madrid';
+        this.LATITUDE_COMPANY = 40.4542002;
+        this.LONGITUDE_COMPANY = -3.4918238999999858;
         this.MUNDILABEL_LOGOTYPE_URL = '../../assets/images/mundilabel_logo.svg';
         this.MUNDILABEL_HAND_HOME_IMAGE_URL = '../../assets/images/HandMundilabel.jpg';
         this.MUNDILABEL_LABEL_IMAGE_URL = '../../assets/images/labelMundilabel.jpg';
@@ -566,7 +568,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".font-title {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 2.8rem;\n  font-weight: 900; }\n\n.font-subtitle {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 2rem;\n  font-weight: 200; }\n\n.font-widget {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 1rem;\n  font-weight: 400; }\n\n.font-paragraph {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 0.95rem;\n  font-weight: 300; }\n\n.font-detail {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 0.75rem;\n  font-weight: 300; }\n\n.title-line, .slogan-line {\n  width: 8%;\n  border-top: 14px solid rgba(13, 135, 216, 0.35); }\n\n.light-shadow {\n  box-shadow: 0px 0px 5px 0px rgba(41, 47, 56, 0.75); }\n\n.text-content-decorate, p.text-content {\n  text-align: justify;\n  font-size: 0.95rem;\n  color: rgba(41, 47, 56, 0.85); }\n\n.company-features-wrapper {\n  border-top: 4px solid #0D87D8;\n  padding: 2rem 0.5rem;\n  background-color: #292F38; }\n  .company-features-wrapper .feature {\n    height: 15rem;\n    padding: 0 1rem;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: column;\n            flex-direction: column;\n    -webkit-box-pack: start;\n        -ms-flex-pack: start;\n            justify-content: flex-start;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    color: rgba(255, 255, 255, 0.65) !important; }\n    .company-features-wrapper .feature span {\n      text-align: center;\n      font-size: 1.8rem;\n      font-weight: bold; }\n    .company-features-wrapper .feature p {\n      margin-top: 0.5rem;\n      opacity: 0.75;\n      text-align: center;\n      font-size: 0.95rem;\n      margin-bottom: 0 !important; }\n    .company-features-wrapper .feature i {\n      font-size: 6.5rem;\n      color: rgba(255, 255, 255, 0.35); }\n\n.company-slogan-wrapper {\n  padding: 5rem 1rem;\n  background-color: #FFFFFF; }\n  .company-slogan-wrapper p {\n    text-align: center;\n    margin-bottom: 0 !important; }\n\np.slogan {\n  color: rgba(41, 47, 56, 0.85) !important;\n  text-align: left !important;\n  font-size: 2.8rem;\n  font-weight: 200; }\n\n.box-contact-info {\n  padding: 2rem 0;\n  color: rgba(41, 47, 56, 0.55) !important;\n  background-color: rgba(41, 47, 56, 0.2); }\n  .box-contact-info.last-box {\n    background-color: #d6dde9; }\n  .box-contact-info h1 {\n    text-align: center;\n    font-size: 1.3rem !important;\n    margin-bottom: none; }\n    .box-contact-info h1 span {\n      font-size: 1.3rem !important;\n      font-weight: bold; }\n\n.background-image {\n  width: 100%;\n  height: 40rem;\n  background-size: cover;\n  background-repeat: no-repeat;\n  background-position: center;\n  background-attachment: scroll; }\n\np.text-content {\n  margin-bottom: 0; }\n  p.text-content.one {\n    margin-top: 3rem; }\n  p.text-content.two {\n    margin-bottom: 3rem; }\n\n.box-how-we-work {\n  border-top: 4px solid #0D87D8;\n  padding: 3rem 0; }\n  .box-how-we-work h1 {\n    color: rgba(41, 47, 56, 0.85);\n    text-align: left;\n    font-size: 2.8rem; }\n    .box-how-we-work h1 i {\n      font-size: 3rem; }\n\n.clients-logos-wrapper {\n  width: 100%;\n  height: 15rem;\n  margin-bottom: 3rem;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between; }\n  .clients-logos-wrapper div.our-client-logo {\n    height: 100%;\n    width: 100%;\n    margin: 2rem 1rem !important;\n    background-size: contain;\n    background-repeat: no-repeat;\n    background-position: center;\n    opacity: 0.45; }\n\n.box-last-info {\n  width: 100%;\n  height: 15rem; }\n\n@media (max-width: 992px) and (min-width: 768px) {\n  .company-features-wrapper .feature {\n    height: 20rem; } }\n\n@media (max-width: 576px) {\n  p.slogan {\n    font-size: 1.8rem; } }\n", ""]);
+exports.push([module.i, ".font-title {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 2.8rem;\n  font-weight: 900; }\n\n.font-subtitle {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 2rem;\n  font-weight: 200; }\n\n.font-widget {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 1rem;\n  font-weight: 400; }\n\n.font-paragraph {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 0.95rem;\n  font-weight: 300; }\n\n.font-detail {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 0.75rem;\n  font-weight: 300; }\n\n.title-line, .slogan-line {\n  width: 8%;\n  border-top: 14px solid rgba(13, 135, 216, 0.35); }\n\n.light-shadow {\n  box-shadow: 0px 0px 5px 0px rgba(41, 47, 56, 0.75); }\n\n.text-content-decorate, p.text-content {\n  text-align: justify;\n  font-size: 0.95rem;\n  color: rgba(41, 47, 56, 0.85); }\n\n.company-features-wrapper {\n  border-top: 4px solid #0D87D8;\n  padding: 2rem 0.5rem;\n  background-color: #292F38; }\n  .company-features-wrapper .feature {\n    height: 15rem;\n    padding: 0 1rem;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: column;\n            flex-direction: column;\n    -webkit-box-pack: start;\n        -ms-flex-pack: start;\n            justify-content: flex-start;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    color: rgba(255, 255, 255, 0.65) !important; }\n    .company-features-wrapper .feature span {\n      text-align: center;\n      font-size: 1.8rem;\n      font-weight: bold; }\n    .company-features-wrapper .feature p {\n      margin-top: 0.5rem;\n      opacity: 0.75;\n      text-align: center;\n      font-size: 0.95rem;\n      margin-bottom: 0 !important; }\n    .company-features-wrapper .feature i {\n      font-size: 6.5rem;\n      color: rgba(255, 255, 255, 0.35); }\n\n.company-slogan-wrapper {\n  padding: 5rem 1rem;\n  background-color: #FFFFFF; }\n  .company-slogan-wrapper p {\n    text-align: center;\n    margin-bottom: 0 !important; }\n\np.slogan {\n  color: rgba(41, 47, 56, 0.85) !important;\n  text-align: left !important;\n  font-size: 2.8rem;\n  font-weight: 200; }\n\n.box-contact-info {\n  padding: 2rem 0;\n  color: rgba(41, 47, 56, 0.55) !important;\n  background-color: rgba(41, 47, 56, 0.2); }\n  .box-contact-info.last-box {\n    background-color: #d6dde9; }\n  .box-contact-info h1 {\n    text-align: center;\n    font-size: 1.3rem !important;\n    margin-bottom: none; }\n    .box-contact-info h1 span {\n      font-size: 1.3rem !important;\n      font-weight: bold; }\n\n.background-image {\n  width: 100%;\n  height: 40rem;\n  background-size: cover;\n  background-repeat: no-repeat;\n  background-position: center;\n  background-attachment: scroll; }\n\np.text-content {\n  margin-bottom: 0; }\n  p.text-content.one {\n    margin-top: 3rem; }\n  p.text-content.two {\n    margin-bottom: 3rem; }\n\n.box-how-we-work {\n  border-top: 4px solid #0D87D8;\n  padding: 3rem 0; }\n  .box-how-we-work h1 {\n    color: rgba(41, 47, 56, 0.85);\n    text-align: left;\n    font-size: 2.8rem; }\n    .box-how-we-work h1 i {\n      font-size: 3rem; }\n\n.clients-logos-wrapper {\n  width: 100%;\n  height: 15rem;\n  margin-bottom: 3rem;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between; }\n  .clients-logos-wrapper div.our-client-logo {\n    height: 100%;\n    width: 100%;\n    margin: 2rem 1rem !important;\n    background-size: contain;\n    background-repeat: no-repeat;\n    background-position: center;\n    opacity: 0.45; }\n\n.box-last-info {\n  width: 100%;\n  height: 15rem; }\n\n@media (max-width: 992px) and (min-width: 768px) {\n  .company-features-wrapper .feature {\n    height: 20rem; } }\n\n@media (max-width: 576px) {\n  p.slogan {\n    font-size: 1.8rem; }\n  .background-image {\n    height: 20rem; } }\n", ""]);
 
 // exports
 
@@ -629,7 +631,7 @@ var _a;
 /***/ "../../../../../src/app/components/location/location.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container section\">\n  \n  <div class=\"row\">\n    <div class=\"col-12\">\n\n      <h1 class=\"section-title\">{{ 'NAVIGATION_ROUTE.LOCATION' | translate }}</h1>\n      <h2 class=\"section-subtitle\">{{ 'LOCATION.SECTION_SUBTITLE' | translate }}</h2>\n\n    </div>\n  </div>\n\n\n  <div class=\"row\">\n    <div class=\"col-12\">\n\n      <p class=\"text-info\">\n        {{ 'LOCATION.DESCRIPTION_CONTENT' | translate }}\n      </p>\n\n    </div>\n  </div>\n\n</div>\n"
+module.exports = "<div class=\"container section\">\n  \n  <div class=\"row\">\n    <div class=\"col-12\">\n\n      <h1 class=\"section-title\">{{ 'NAVIGATION_ROUTE.LOCATION' | translate }}</h1>\n      <h2 class=\"section-subtitle\">{{ 'LOCATION.SECTION_SUBTITLE' | translate }}</h2>\n\n    </div>\n  </div>\n\n\n  <div class=\"row info\">\n    <div class=\"col-12\">\n\n      <p class=\"text-info\">\n        {{ 'LOCATION.DESCRIPTION_CONTENT' | translate }}\n      </p>\n\n    </div>\n  </div>\n\n  <div class=\"row\">\n    <div class=\"col-12\">\n\n      <div class=\"google-map-wrapper\">\n        <agm-map class=\"google-map\" [zoom]=\" zoom \" [latitude]=\" latitude \" [longitude]=\" longitude \">\n          <agm-marker [latitude]=\"latitude\" [longitude]=\"longitude\"></agm-marker>\n        </agm-map>\n      </div>\n      \n    </div>\n  </div>\n\n\n  <div class=\"row\">\n              \n    <div class=\"col-12 col-md-6 col-lg-4 \">          \n      <div class=\"address-info\">\n        <span>{{ address }}</span>\n        <span>{{ town }} ({{ province }})</span>\n      </div>\n    </div>\n      \n      \n    <div class=\"col-12 col-md-6 col-lg-4\">\n      <div class=\"address-info\">\n        <span>{{ mail }}</span>\n        <span> Tlf: {{ phone }} - Fax: {{ fax }}</span>    \n      </div>\n    </div>\n  </div>\n\n\n  <div class=\"info-contact-wrapper\">\n    <h1>{{ 'LOCATION.INFO_CONTACT_PHONE' | translate }} <span>{{ phone }}</span> {{ 'LOCATION.INFO_CONTACT_MAIL' | translate }} <span>{{ mail }}</span> </h1>\n  </div>\n\n\n\n</div>\n"
 
 /***/ }),
 
@@ -641,7 +643,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".text-info {\n  color: rgba(41, 47, 56, 0.85); }\n", ""]);
+exports.push([module.i, ".font-title {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 2.8rem;\n  font-weight: 900; }\n\n.font-subtitle, .info-contact-wrapper h1, .info-contact-wrapper h1 span {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 2rem;\n  font-weight: 200; }\n\n.font-widget {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 1rem;\n  font-weight: 400; }\n\n.font-paragraph {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 0.95rem;\n  font-weight: 300; }\n\n.font-detail {\n  font-family: \"Montserrat\", sans-serif;\n  font-size: 0.75rem;\n  font-weight: 300; }\n\n.title-line {\n  width: 8%;\n  border-top: 14px solid rgba(13, 135, 216, 0.35); }\n\n.light-shadow {\n  box-shadow: 0px 0px 5px 0px rgba(41, 47, 56, 0.75); }\n\n.info {\n  margin-top: 0.5rem; }\n\n.text-info {\n  color: rgba(41, 47, 56, 0.85); }\n\n.google-map-wrapper {\n  margin-top: 3rem !important;\n  margin-bottom: 3rem; }\n  .google-map-wrapper .google-map {\n    width: 100%;\n    height: 30rem; }\n\n.info-contact-wrapper {\n  margin-top: 3rem; }\n  .info-contact-wrapper h1 {\n    color: rgba(41, 47, 56, 0.85); }\n    .info-contact-wrapper h1 span {\n      background-color: rgba(13, 135, 216, 0.35);\n      padding: 0.12rem 1rem; }\n\n@media (min-width: 0) {\n  .info-contact-wrapper {\n    margin-top: 3rem; }\n    .info-contact-wrapper h1 {\n      font-size: 1.5rem; }\n      .info-contact-wrapper h1 span {\n        font-size: 1.5rem; } }\n", ""]);
 
 // exports
 
@@ -657,6 +659,7 @@ module.exports = module.exports.toString();
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LocationComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__commons__ = __webpack_require__("../../../../../src/app/commons/index.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -667,10 +670,25 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
 var LocationComponent = (function () {
-    function LocationComponent() {
-    }
+    function LocationComponent(mundilabelSettings) {
+        this.mundilabelSettings = mundilabelSettings;
+    } // Constructor
     LocationComponent.prototype.ngOnInit = function () {
+        this.zoom = 16;
+        this.latitude = this.mundilabelSettings.LATITUDE_COMPANY;
+        this.longitude = this.mundilabelSettings.LONGITUDE_COMPANY;
+        this.address = this.mundilabelSettings.ADDRESS_COMPANY;
+        this.town = this.mundilabelSettings.TOWN_COMPANY;
+        this.province = this.mundilabelSettings.PROVINCE_COMPANY;
+        this.phone = this.mundilabelSettings.PHONE_COMPANY;
+        this.fax = this.mundilabelSettings.FAX_COMPANY;
+        this.mail = this.mundilabelSettings.MAIL_COMPANY;
+        this.params = {
+            phone: this.phone,
+            mail: this.mail
+        };
     }; // NgOnInit
     return LocationComponent;
 }()); // LocationComponent
@@ -681,9 +699,10 @@ LocationComponent = __decorate([
         styles: [__webpack_require__("../../../../../src/app/components/location/location.component.scss")],
         changeDetection: __WEBPACK_IMPORTED_MODULE_0__angular_core__["k" /* ChangeDetectionStrategy */].OnPush
     }),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__commons__["b" /* MundilabelSettingsService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__commons__["b" /* MundilabelSettingsService */]) === "function" && _a || Object])
 ], LocationComponent);
 
+var _a;
 //# sourceMappingURL=location.component.js.map
 
 /***/ }),
@@ -1318,11 +1337,11 @@ __decorate([
     __metadata("design:type", Boolean)
 ], RawDropdownTriggerDirective.prototype, "dropdownDisabled", void 0);
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["T" /* Output */])('onShown'),
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["U" /* Output */])('onShown'),
     __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["x" /* EventEmitter */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["x" /* EventEmitter */]) === "function" && _a || Object)
 ], RawDropdownTriggerDirective.prototype, "onShown", void 0);
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["T" /* Output */])('onHidden'),
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["U" /* Output */])('onHidden'),
     __metadata("design:type", typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["x" /* EventEmitter */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["x" /* EventEmitter */]) === "function" && _b || Object)
 ], RawDropdownTriggerDirective.prototype, "onHidden", void 0);
 __decorate([
@@ -1335,7 +1354,7 @@ RawDropdownTriggerDirective = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["u" /* Directive */])({
         selector: '[raw-dropdown-trigger]'
     }),
-    __metadata("design:paramtypes", [typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["_18" /* ViewContainerRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["_18" /* ViewContainerRef */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["q" /* ComponentFactoryResolver */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["q" /* ComponentFactoryResolver */]) === "function" && _d || Object])
+    __metadata("design:paramtypes", [typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["_19" /* ViewContainerRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["_19" /* ViewContainerRef */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["q" /* ComponentFactoryResolver */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["q" /* ComponentFactoryResolver */]) === "function" && _d || Object])
 ], RawDropdownTriggerDirective);
 
 var _e, _a, _b, _c, _d;
@@ -1672,7 +1691,7 @@ __decorate([
     __metadata("design:type", Boolean)
 ], RawDropdownComponent.prototype, "closeWhenMouseEvent", void 0);
 __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_16" /* ViewChild */])('dropdownContainer'),
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_17" /* ViewChild */])('dropdownContainer'),
     __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* ElementRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* ElementRef */]) === "function" && _a || Object)
 ], RawDropdownComponent.prototype, "dropdownContainer", void 0);
 RawDropdownComponent = __decorate([
@@ -1682,7 +1701,7 @@ RawDropdownComponent = __decorate([
         styles: [__webpack_require__("../../../../../src/app/modules/ngx-rawmaterial/components/raw-dropdown/raw-dropdown.component.scss")],
         changeDetection: __WEBPACK_IMPORTED_MODULE_0__angular_core__["k" /* ChangeDetectionStrategy */].OnPush
     }),
-    __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* ElementRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* ElementRef */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["l" /* ChangeDetectorRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["l" /* ChangeDetectorRef */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["_1" /* Renderer */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["_1" /* Renderer */]) === "function" && _d || Object])
+    __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* ElementRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* ElementRef */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["l" /* ChangeDetectorRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["l" /* ChangeDetectorRef */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Renderer */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Renderer */]) === "function" && _d || Object])
 ], RawDropdownComponent);
 
 var _a, _b, _c, _d;
@@ -2129,23 +2148,24 @@ var _a, _b;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__("../../../common/@angular/common.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ng2_translate__ = __webpack_require__("../../../../ng2-translate/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__modules_ngx_rawmaterial_rawmaterial_modules__ = __webpack_require__("../../../../../src/app/modules/ngx-rawmaterial/rawmaterial.modules.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__mundilabel_routing__ = __webpack_require__("../../../../../src/app/mundilabel.routing.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__mundilabel_component__ = __webpack_require__("../../../../../src/app/mundilabel.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_unknow_page_unknow_page_component__ = __webpack_require__("../../../../../src/app/components/unknow-page/unknow-page.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_home_home_component__ = __webpack_require__("../../../../../src/app/components/home/home.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_about_us_about_us_component__ = __webpack_require__("../../../../../src/app/components/about-us/about-us.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_contact_contact_component__ = __webpack_require__("../../../../../src/app/components/contact/contact.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_footer_footer_component__ = __webpack_require__("../../../../../src/app/components/footer/footer.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__components_header_header_component__ = __webpack_require__("../../../../../src/app/components/header/header.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__components_header_components_navigator_navigator_component__ = __webpack_require__("../../../../../src/app/components/header/components/navigator/navigator.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__components_logotype_logotype_component__ = __webpack_require__("../../../../../src/app/components/logotype/logotype.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__components_wallpaper_wallpaper_component__ = __webpack_require__("../../../../../src/app/components/wallpaper/wallpaper.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__commons_mundilabel_settings__ = __webpack_require__("../../../../../src/app/commons/mundilabel.settings.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__commons_mundilabel_service__ = __webpack_require__("../../../../../src/app/commons/mundilabel.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__components_location_location_component__ = __webpack_require__("../../../../../src/app/components/location/location.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__components_sidebar_menu_sidebar_menu_component__ = __webpack_require__("../../../../../src/app/components/sidebar-menu/sidebar-menu.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__agm_core__ = __webpack_require__("../../../../@agm/core/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ng2_translate__ = __webpack_require__("../../../../ng2-translate/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__modules_ngx_rawmaterial_rawmaterial_modules__ = __webpack_require__("../../../../../src/app/modules/ngx-rawmaterial/rawmaterial.modules.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__mundilabel_routing__ = __webpack_require__("../../../../../src/app/mundilabel.routing.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__mundilabel_component__ = __webpack_require__("../../../../../src/app/mundilabel.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_unknow_page_unknow_page_component__ = __webpack_require__("../../../../../src/app/components/unknow-page/unknow-page.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_home_home_component__ = __webpack_require__("../../../../../src/app/components/home/home.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_about_us_about_us_component__ = __webpack_require__("../../../../../src/app/components/about-us/about-us.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_contact_contact_component__ = __webpack_require__("../../../../../src/app/components/contact/contact.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__components_footer_footer_component__ = __webpack_require__("../../../../../src/app/components/footer/footer.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__components_header_header_component__ = __webpack_require__("../../../../../src/app/components/header/header.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__components_header_components_navigator_navigator_component__ = __webpack_require__("../../../../../src/app/components/header/components/navigator/navigator.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__components_logotype_logotype_component__ = __webpack_require__("../../../../../src/app/components/logotype/logotype.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__components_wallpaper_wallpaper_component__ = __webpack_require__("../../../../../src/app/components/wallpaper/wallpaper.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__commons_mundilabel_settings__ = __webpack_require__("../../../../../src/app/commons/mundilabel.settings.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__commons_mundilabel_service__ = __webpack_require__("../../../../../src/app/commons/mundilabel.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__components_location_location_component__ = __webpack_require__("../../../../../src/app/components/location/location.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__components_sidebar_menu_sidebar_menu_component__ = __webpack_require__("../../../../../src/app/components/sidebar-menu/sidebar-menu.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2173,8 +2193,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
 function translateLoader(http) {
-    return new __WEBPACK_IMPORTED_MODULE_4_ng2_translate__["d" /* TranslateStaticLoader */](http, 'assets/i18n', '.json');
+    return new __WEBPACK_IMPORTED_MODULE_5_ng2_translate__["d" /* TranslateStaticLoader */](http, 'assets/i18n', '.json');
 } // TranslateLoader
 var MundilabelModule = (function () {
     function MundilabelModule() {
@@ -2184,37 +2205,38 @@ var MundilabelModule = (function () {
 MundilabelModule = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["M" /* NgModule */])({
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_7__mundilabel_component__["a" /* MundilabelComponent */],
-            __WEBPACK_IMPORTED_MODULE_8__components_unknow_page_unknow_page_component__["a" /* UnknowPageComponent */],
-            __WEBPACK_IMPORTED_MODULE_9__components_home_home_component__["a" /* HomeComponent */],
-            __WEBPACK_IMPORTED_MODULE_10__components_about_us_about_us_component__["a" /* AboutUsComponent */],
-            __WEBPACK_IMPORTED_MODULE_11__components_contact_contact_component__["a" /* ContactComponent */],
-            __WEBPACK_IMPORTED_MODULE_12__components_footer_footer_component__["a" /* FooterComponent */],
-            __WEBPACK_IMPORTED_MODULE_13__components_header_header_component__["a" /* HeaderComponent */],
-            __WEBPACK_IMPORTED_MODULE_14__components_header_components_navigator_navigator_component__["a" /* NavigatorComponent */],
-            __WEBPACK_IMPORTED_MODULE_15__components_logotype_logotype_component__["a" /* LogotypeComponent */],
-            __WEBPACK_IMPORTED_MODULE_16__components_wallpaper_wallpaper_component__["a" /* WallpaperComponent */],
-            __WEBPACK_IMPORTED_MODULE_19__components_location_location_component__["a" /* LocationComponent */],
-            __WEBPACK_IMPORTED_MODULE_20__components_sidebar_menu_sidebar_menu_component__["a" /* SidebarMenuComponent */]
+            __WEBPACK_IMPORTED_MODULE_8__mundilabel_component__["a" /* MundilabelComponent */],
+            __WEBPACK_IMPORTED_MODULE_9__components_unknow_page_unknow_page_component__["a" /* UnknowPageComponent */],
+            __WEBPACK_IMPORTED_MODULE_10__components_home_home_component__["a" /* HomeComponent */],
+            __WEBPACK_IMPORTED_MODULE_11__components_about_us_about_us_component__["a" /* AboutUsComponent */],
+            __WEBPACK_IMPORTED_MODULE_12__components_contact_contact_component__["a" /* ContactComponent */],
+            __WEBPACK_IMPORTED_MODULE_13__components_footer_footer_component__["a" /* FooterComponent */],
+            __WEBPACK_IMPORTED_MODULE_14__components_header_header_component__["a" /* HeaderComponent */],
+            __WEBPACK_IMPORTED_MODULE_15__components_header_components_navigator_navigator_component__["a" /* NavigatorComponent */],
+            __WEBPACK_IMPORTED_MODULE_16__components_logotype_logotype_component__["a" /* LogotypeComponent */],
+            __WEBPACK_IMPORTED_MODULE_17__components_wallpaper_wallpaper_component__["a" /* WallpaperComponent */],
+            __WEBPACK_IMPORTED_MODULE_20__components_location_location_component__["a" /* LocationComponent */],
+            __WEBPACK_IMPORTED_MODULE_21__components_sidebar_menu_sidebar_menu_component__["a" /* SidebarMenuComponent */]
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_1__angular_common__["b" /* CommonModule */],
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
-            __WEBPACK_IMPORTED_MODULE_6__mundilabel_routing__["b" /* MundilabelRouting */],
-            __WEBPACK_IMPORTED_MODULE_5__modules_ngx_rawmaterial_rawmaterial_modules__["a" /* RawMaterialModule */],
-            __WEBPACK_IMPORTED_MODULE_4_ng2_translate__["b" /* TranslateModule */].forRoot()
+            __WEBPACK_IMPORTED_MODULE_7__mundilabel_routing__["b" /* MundilabelRouting */],
+            __WEBPACK_IMPORTED_MODULE_6__modules_ngx_rawmaterial_rawmaterial_modules__["a" /* RawMaterialModule */],
+            __WEBPACK_IMPORTED_MODULE_5_ng2_translate__["b" /* TranslateModule */].forRoot(),
+            __WEBPACK_IMPORTED_MODULE_4__agm_core__["a" /* AgmCoreModule */].forRoot({ apiKey: 'AIzaSyDx3w26l9vnQT6AFHNCUP9VQcuWTwwvSMk' })
         ],
         providers: [
-            __WEBPACK_IMPORTED_MODULE_18__commons_mundilabel_service__["a" /* MundilabelService */],
-            __WEBPACK_IMPORTED_MODULE_17__commons_mundilabel_settings__["a" /* MundilabelSettingsService */],
-            __WEBPACK_IMPORTED_MODULE_4_ng2_translate__["c" /* TranslateService */],
+            __WEBPACK_IMPORTED_MODULE_19__commons_mundilabel_service__["a" /* MundilabelService */],
+            __WEBPACK_IMPORTED_MODULE_18__commons_mundilabel_settings__["a" /* MundilabelSettingsService */],
+            __WEBPACK_IMPORTED_MODULE_5_ng2_translate__["c" /* TranslateService */],
             {
-                provide: __WEBPACK_IMPORTED_MODULE_4_ng2_translate__["a" /* TranslateLoader */],
+                provide: __WEBPACK_IMPORTED_MODULE_5_ng2_translate__["a" /* TranslateLoader */],
                 useFactory: translateLoader,
                 deps: [__WEBPACK_IMPORTED_MODULE_3__angular_http__["a" /* Http */]]
             }
         ],
-        bootstrap: [__WEBPACK_IMPORTED_MODULE_7__mundilabel_component__["a" /* MundilabelComponent */]]
+        bootstrap: [__WEBPACK_IMPORTED_MODULE_8__mundilabel_component__["a" /* MundilabelComponent */]]
     })
 ], MundilabelModule);
 
@@ -2303,7 +2325,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 if (__WEBPACK_IMPORTED_MODULE_3__environments_environment__["a" /* environment */].production) {
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_23" /* enableProdMode */])();
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_24" /* enableProdMode */])();
 } // If
 Object(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])()
     .bootstrapModule(__WEBPACK_IMPORTED_MODULE_2__app_mundilabel_module__["a" /* MundilabelModule */])
